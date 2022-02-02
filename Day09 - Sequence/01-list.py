@@ -79,8 +79,7 @@ lbf = ['lion', 'bear', 'iris']
 
 #%%
 
-#%%
-
+#%% How to count number of elements in a list?
 
 def count_a(alist):
     """ This function illustrates using lists in 'for' loops. Note that the loop variable 'letter' steps through the list, alist, taking the value of each of its items in turn. """
@@ -117,43 +116,73 @@ Caution: Do NOT use the variable nlis in your function. This function should wor
 nlis = [2, 4, 8, 105, 210, -3, 47, 8, 33, 1]  # %% average should by 41.5
 rlis = [3.14, 7.26, -4.76, 0, 8.24, 9.1, -100.7, 4]  # average is -9.215
 # some tests for your function. Be sure your function works for these
-# average(nlis)
-# average(rlis)
+print(average(nlis))
+print(average(rlis))
+
 
 #%% Solution
 # def average(numlis):
 
+# # Solution 1:
+# def average(numlis):
+#     _sum = 0
+#     ct = 0
+#     for item in numlis:
+#         _sum += item
+#         print(item)
+#         ct += 1
+#     return _sum/ct
+
+# # Solution 2:
+# def average(numlis):
+#     _sum = 0
+#     ct = 0
+#     for item in range(0,len(numlis)):
+#         _sum += numlis[item]
+#     return _sum/len(numlis)
+
+# ======================================
+# Stepping through lists using loops
+# ======================================
 
 # Let me emphasize that you can make a 'for' loop with just a list. One can simply step through a list to form the loop.
 
 #%% In this example case it is a list of states and we will simply be stepping through the loop and printing out the states.
-newEngland = ["Maine", "New Hampshire", "Vermont",
-              "Rhodes Island", "Massachusetts", "Connecticut"]
-
+newEngland = ["Maine", "New Hampshire", "Vermont", "Rhodes Island", "Massachusetts", "Connecticut"]
 
 def for_state(slis):
     for state in slis:
         print(state)
-
 
 # Keep in mind that a 'for' loop can step through various kinds of iterators.
 """
 Exercise:
 Write a function 'print_list(myList)' that prints items of the list myList. Test it by running the three tests that I give here. This requires writing a function that includes a loop like the one above, but uses myList for the iterator. Inside your function you should use myList to represent the list. If you do so, your function should pass all three tests below.
 """
+for_state(newEngland)
+
 #%% Test with below lists
 letter_list = ['a', 'b', 'c']
 cap_list = ['A', 'B', 'C', 'D']
 misc_list = ['ball', 3.14, -50, 'university', "course"]
+
 #%% Solution
 # def print_list(myList):
 
+def PrintMyList(slis):
+    for state in slis:
+        print(state)
 
+PrintMyList(letter_list)
+PrintMyList(cap_list)
+PrintMyList(misc_list)
+
+#%% 
 """ 
 Compare list(range(2,20,3)) and range(2,20,3). The first one is a list and the second one is what Python calls an iterator. The second one dishes out the next element in the list each time it is called. This is one of the changes from Python 2 to Python 3. In Python 2 it was a list and there was a function xrange() for iterating without building the list. That is gone from Python 3.
 Can you think of a reason that using range in Python 2 might not be a good idea with huge lists?
-
 """
+
 #%%
 print(list(range(2, 20, 3)))
 print(range(2, 20, 3))

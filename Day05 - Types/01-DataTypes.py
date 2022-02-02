@@ -44,9 +44,13 @@ x = True  # Data Type : bool
 
 #%% Binary Types
 x = b"Hello"  # Data Type : bytes
-x = bytearray(5)  # Data Type : bytearray
-x = memoryview(bytes(5))  # Data Type : memoryview
+print(type(x))
 
+y = bytearray(5)  # Data Type : bytearray
+print(type(y))
+
+z = memoryview(bytes(5))  # Data Type : memoryview
+print(type(z))
 
 #%% If you want to specify the data type, you can use the following constructor functions
 

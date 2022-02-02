@@ -1,34 +1,47 @@
-#%%
-if 5 > 2:
-    print("Five is greater than two!")
+'''
+Python Conditions and If statements
+Python supports the usual logical conditions from mathematics:
 
-#%%
-if 5 < 2:
-    print("Two is greater than five!")
+Equals: a == b
+Not Equals: a != b
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+These conditions can be used in several ways, most commonly in "if statements" and loops.
 
-# %% We can rewrite this like below
-if 5 > 2:
-    print("Five is greater than two!")
-if 5 < 2:
-    print("Two is greater than five!")
+'''
+#%% An "if statement" is written by using the if keyword.
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+
+# The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".
 
 # %% or like below can rewrite this like below
-if 5 > 2:
-    print("Five is greater than two!")
-else:
-    print("Two is greater than five!")
+a = 333
+b = 200
 
-# %% If there are multiple conditions
-MyInput = 5
-if 5 > MyInput:
-    print("Five is greater than ", MyInput)
-elif 5 == MyInput:
-    print("Five is equal to ", MyInput)
+if b > a:
+    print("b is greater than a")
+elif b < a:
+    print("b is smaller than a")
+
+# %% The else keyword catches anything which isn't caught by the preceding conditions.
+
+a = 200
+b = 200
+
+if b > a:
+    print("b is greater than a")
+elif b < a:
+    print("b is smaller than a")
 else:
-    print("Five is less than ", MyInput)
+    print("a and b are equal")
 
 # %% Task 01 - Create a program to test if number is 0,+ve or -ve
-number = input("Enter your number: ")
+number = int(input("Enter your number: "))
 
 if number > 0:
     print("+ve")
@@ -37,50 +50,57 @@ elif number == 0:
 else:
     print("-ve")
 
-# %% Exercise - 
-'''
-Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:
-Write a program that prints the numbers from 1 to 100 and for multiples of ‘3’ print “Fizz” instead of the number and for the multiples of ‘5’ print “Buzz”
+#%% Short Hand If
+a = 201
+b = 200
+if a > b: print("a is greater than b")
 
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
+#%% Short Hand If ... Else
+# This technique is known as Ternary Operators, or Conditional Expressions.
 
-'''
+a = 201
+b = 200
+print("A") if a > b else print("B")
 
+#%% You can also have multiple else statements on the same line:
 
-#%% Solution
+a = 330
+b = 330
+print("A") if a > b else print("=") if a == b else print("B")
 
-def fizzBuzz(n):
-    # Write your code here
-    i = 1
-    while(i<n+1):
-        if (i%3 == 0) and (i%5 == 0):
-            print("FizzBuzz")
-        elif (i%3 == 0):
-            print("Fizz")
-        elif (i%5 == 0):
-            print("Buzz")
-        else:
-            print(i)
-        i += 1
-        
-        
-if __name__ == '__main__':
-    n = int(input().strip())
+#%% The and keyword is a logical operator, and is used to combine conditional statements
+# Test if a is greater than b, AND if c is greater than a:
 
-    fizzBuzz(n)
+a = 200
+b = 33
+c = 500
+if a > b and c > a:
+  print("Both conditions are True")
 
+#%% The or keyword is a logical operator, and is used to combine conditional statements:
+
+# Test if a is greater than b, OR if a is greater than c:
+
+a = 200
+b = 33
+c = 500
+if a > b or a > c:
+  print("At least one of the conditions is True")
+
+#%% Nested If : You can have if statements inside if statements, this is called nested if statements
+x = 41
+
+if x > 10:
+  print("Above ten,")
+  if x > 20:
+    print("and also above 20!")
+  else:
+    print("but not above 20.")
+
+#%% The pass Statement : if statements cannot be empty, but if you for some reason have an if statement with no content, put in the pass statement to avoid getting an error.
+a = 33
+b = 200
+
+if b > a:
+  pass
 

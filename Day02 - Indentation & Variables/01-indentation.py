@@ -1,6 +1,6 @@
 # Indentation refers to the spaces at the beginning of a code line.
 # Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
-# Python uses indentation to indicate a block of code.
+# Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.
 
 #%% Let's see a quick example
 i = 1
