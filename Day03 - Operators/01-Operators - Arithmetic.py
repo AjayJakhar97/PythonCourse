@@ -1,6 +1,10 @@
+# Operators are used to perform operations on variables and values
+
+
 # Python Arithmetic Operators
+# ==============================
+
 #%% Addition
-import math
 2+5
 
 #%% Subtraction
@@ -33,24 +37,10 @@ abs(-5)
 
 # %%
 pow(2, 5)
-
-# %%
-math.pow(2, 5)
+#%%
+pow(2, 5, 5 ) # 3rd parameter can used to do this : pow(2, 5)%5
 
 # use pow() if you need an integer outcome and math.pow() for a floating-point result.
+import math
+math.pow(2, 5)
 
-# %% Task01 - print list of numbers raised to the power 3
-# Some random values
-values = [2, 1, 0, 5, 12]
-
-# Raise each number to the power 3
-exponents = []
-for value in values:
-    exponents.append(pow(value, 3))
-# exponents = [pow(value, 3) for value in values]
-
-# Output both lists
-print("Original list:\n", values)
-print("Raised to the power 3:\n", exponents)
-
-# %%

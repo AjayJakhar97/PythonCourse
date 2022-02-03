@@ -18,6 +18,8 @@ else:
 
 print(bool("Hello"))
 print(bool(15))
+print(bool(0))
+print(bool())
 
 #%% Evaluate two variables:
 
@@ -74,8 +76,14 @@ print(isinstance(y, int))
 
 class MyClass:
     def __len__(self):
+    # def something(self):
         return 0
 
 MyObj1 = MyClass()
-print(MyObj1)
+# print(MyObj1)
 print(bool(MyObj1))
+
+
+# The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
+
+# It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class:
