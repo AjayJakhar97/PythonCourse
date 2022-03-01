@@ -1,7 +1,6 @@
 #%% In Python, variables are created when you assign a value to it:
-
-x = 5                 # Data Type : str
-y = "Hello, World!"   # Data Type : int
+x = 5                 # Data Type : int
+y = "Hello, World!"   # Data Type : str
 
 print(x)
 print(f'{x}')

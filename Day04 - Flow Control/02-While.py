@@ -52,6 +52,12 @@ while i < 6:
 else:
   print("i is no longer less than 6")
 
+#%% Make sure you know how to find modulus for next exercise 
+
+print(3%1)
+print(3%2)
+print(3%3)
+
 # %% Exercise - 
 '''
 Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:

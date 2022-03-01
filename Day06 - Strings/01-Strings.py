@@ -37,7 +37,9 @@ https://stackoverflow.com/questions/643694/what-is-the-difference-between-utf-8-
 +---------+--------+--------+----------------+
 '''
 myVariable = 65
+
 print(bin(myVariable))
+
 print(bin(myVariable).replace('0b', ''))
 myVariable = 66
 print(bin(myVariable))
@@ -47,7 +49,7 @@ print(bin(myVariable).replace('0b', ''))
 # Square brackets can be used to access elements of the string. Check the example below
 #%% Get the character at position 1 (remember that the first character has the position 0)
 a = "Hello, World!"
-print(a[1])
+print(a[1])   
 
 #%% Since strings are arrays, we can loop through the characters in a string, with a for loop.
 for x in "banana":
@@ -75,3 +77,4 @@ if "expensive" not in txt:
   print("No, 'expensive' is NOT present.")
 
 # %%
+

@@ -3,6 +3,7 @@
 number = input("Enter your number: ")
 try:
     int(number)
+    # number = int(number)
     if number > 0:
         print("+ve")
     elif number == 0:

@@ -49,8 +49,11 @@ Come back to this after we cover BitWise Operators
 '''
 
 #%% &=			AND : Sets each bit to 1 if both bits are 1
-print(format(5, "b"))
-print(format(3, "b"))
+
+a = 5
+print(f"{a} in binary :",format(a,"b"))
+print(f"3 in binary :",format(3,"b"))
+
 '''
 101
 011
@@ -59,11 +62,13 @@ print(format(3, "b"))
 =====
 '''
 
-x = 5
 x &= 3
 # x = x & 3
+
+print(5&3)
 print(x)
 print(format(1, "b"))
+
 
 #%% |= 			OR : Sets each bit to 1 if one of two bits is 1
 print(format(5, "b"))
@@ -78,6 +83,7 @@ print(format(3, "b"))
 
 x = 5
 x |= 3
+
 # x = x | 3
 print(x)
 print(format(7, "b"))
@@ -104,6 +110,19 @@ print(format(6, "b"))
 print(format(5, "b"))
 x = 5  # 101 in binary
 x = ~x # -x-1 = -(101+1) = -(110) = -6
+
+'''
+101
+001
+=====
+001
+=====
+
+~001 = 110
+opposite (Inverts or One's complement ) of 001 is 110
+
+'''
+
 print(x)
 
 print(int('110',2))

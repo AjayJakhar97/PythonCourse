@@ -1,35 +1,105 @@
-#%% In-Built functions
-abs(-5)
+'''
+A function is a block of code which only runs when it is called. 
+You can pass data, known as parameters, into a function.
+A function can return data as a result.
+'''
+
+# %% In-Built functions
 print()
 
-#%% You can create your own functions too
+abs(-5)
+
+
+# %% You can create your own functions too
+# In Python a function is defined using the def keyword
 
 
 def hello():
     ''' prints Hello, world!'''
     print("Hello, world!")
 
-
+# To call a function, use the function name followed by parenthesis
 hello()
 
-#%%
 
+# %% Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma
 
 def myName(name):
-    print("My name is ", name)
-
+    print("My name is", name)
 
 myName("Sunil")
 
-#%% default parameter
+# Parameters or Arguments?
+'''From a function's perspective:
+
+A parameter is the variable listed inside the parentheses in the function definition.
+An argument is the value that is sent to the function when it is called.
+'''
+
+# %% By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 arguments, you have to call the function with 2 arguments, not more, and not less
 
 
-def ourschool(name="KidBit"):
-    print(name, " is our school")
+def my_function(fname, lname):
+    print(fname + " " + lname)
 
 
-ourschool()
-#%% default parameter can be none
+my_function("Sunil", "Kumar")
+
+# If you try to call the function with 1 or 3 arguments, you will get an error
+my_function("Sunil")
+
+# %% Arbitrary Arguments, *args
+# If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+
+# This way the function will receive a tuple of arguments, and can access the items accordingly:
+
+
+def my_function(*kids):
+    print("The youngest child is " + kids[0])
+
+
+my_function("Olivia", "Emma", "Ava","Sunil")
+my_function("Olivia", "Emma", "Ava")
+my_function("Olivia")
+
+
+# %% Keyword Arguments:
+# You can also send arguments with the key = value syntax. This way the order of the arguments does not matter.
+
+
+def my_function(child3, child2, child1):
+    print("The youngest child is " + child3)
+
+
+my_function(child1="Olivia", child2="Emma", child3="Ava")
+
+# Note: The phrase Keyword Arguments are often shortened to kwargs in Python documentations
+
+# %% Arbitrary Keyword Arguments, **kwargs
+# If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly
+
+
+def my_function(**kid):
+    print("His last name is " + kid["lname"])
+
+
+my_function(fname="Sunil", lname="Kumar")
+
+
+# %% default parameter: If we call the function without argument, it uses the default value
+
+
+def my_function(country="Norway"):
+    print("I am from " + country)
+
+
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil")
+
+
+# %% default parameter can be none
 
 
 def ourschool(name=None):
@@ -40,18 +110,17 @@ def ourschool(name=None):
 
 
 ourschool()
-# ourschool("KidBit")
+ourschool("KidBit")
 
-#%% What if you create function with name that already exists
-
-
-def print():
-    print("This is my print function")
+# %% The pass Statement
+# function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.
 
 
-print()
+def myfunction():
+    pass
 
-#%% Task 01- Create a function to calculate area of a circle
+
+# %% Task 01- Create a function to calculate area of a circle
 
 
 def areaCircle(radius):
@@ -72,42 +141,24 @@ def areaTriangle(base, height):
 
 
 # Let's test it
-#%% Test01 - areaTriangle(1,2)
+# %% Test01 - areaTriangle(1,2)
 areaTriangle(1, 2)
 
-#%% Test02 - areaTriangle(1,4)
+# %% Test02 - areaTriangle(1,4)
 areaTriangle(1, 4)
 
 # %% Task 03 - Write a function 'Fahrenheit_To_Celcius'.
 '''Celcius = 5/9 * (Fahrenheit - 32)'''
-
 
 def Fahrenheit_To_Celcius(TempratureInFahrenheit):
     TempratureInCelcius = 5/9 * (TempratureInFahrenheit - 32)
     print(TempratureInFahrenheit, "Farhenheit = ",
           TempratureInCelcius, "Celcius")
 
-
-#%% Test Fahrenheit_To_Celcius
 Fahrenheit_To_Celcius(212)
 
-#%% Task04 - Create your own version of absolute and print functions
 
-
-def myAbs(number):
-    if number > 0:
-        return number
-    else:
-        return -number
-
-
-#%% Let's test it
-myAbs(5)
-myAbs(-5)
-myAbs(0)
-
-#%%  Notice while True
-
+# %%  Notice while True
 
 def forever():
     """ This will run forever. In this case Ctrl-C will stop it, but sometimes
@@ -116,6 +167,4 @@ kill kernel. Open a new IPConsole on the Console menu to restart """
     while True:
         pass
 
-
-#%% test it
 forever()

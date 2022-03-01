@@ -12,12 +12,14 @@ for items in fruits:
 for items in fruits:
     print(items, end=' ')
 
+print()
+
 for items in fruits:
     print(items, end=',')
 
 #%% We can also output positions along with elements like below
 for items in range(len(fruits)):
-    print(items, " - ", fruits[items])
+    print(items+1, " - ", fruits[items])
 # %% Looping Through a String : Even strings are iterable objects, they contain a sequence of characters:
 
 for x in "banana":
@@ -60,6 +62,9 @@ for x in range(6):
 #%% Increment the sequence with 3 (default is 1):
 
 for x in range(2, 30, 3):
+  print(x)
+
+for x in range(2, 30):
   print(x)
 
 #%% Else in For Loop

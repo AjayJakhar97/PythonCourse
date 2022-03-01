@@ -18,7 +18,7 @@ Key Points to Remember
 # ================================
 #%% Example 1: Converting integer to float
 num_int = 123
-num_flo = 1.23
+num_flo = 123.565
 
 num_new = num_int + num_flo
 
@@ -40,16 +40,23 @@ print("Data type of num_str:", type(num_str))
 
 print(num_int+num_str)
 
-
 # Explicit Type Conversion ( a.k.a Type casting)
 # =============================
 # Syntax : <required_datatype>(expression)
 
+print(num_int+int(num_str))
+
 #%% If you want to specify the data type of a variable, this can be done with casting.
 
 x = str(3)    # x will be '3'
+print(x)
+
 y = int(3)    # y will be 3
+print(y)
+
 z = float(3)  # z will be 3.0
+print(z)
+
 
 #%% Example 3: Addition of string and integer using explicit conversion
 num_int = 123
@@ -71,10 +78,17 @@ print("Data type of the sum:", type(num_sum))
 def multiply():
     numstr1 = input("Enter a number: ")
     numstr2 = input("Enter another number: ")
+
+    print(type(numstr1))
+    print(type(numstr2))
+
     num1 = float(numstr1)
     num2 = float(numstr2)
+    
     print("Their product is ", num1 * num2)
-    # print("Won't work: ", numstr1 * numstr2)
+    print("Won't work: ", numstr1 * numstr2)
 
 #%% Let's run multiply()
-# multiply()
+multiply()
+
+# %%

@@ -1,7 +1,15 @@
+
+#%%
+
 # This is a single line comment
 
-""" This is a 
-multi-line comment"""
+#%%
+""" This 
+is 
+a 
+multi-line 
+comment
+"""
 
 '''Here is another multi-line comment '''
 
@@ -11,5 +19,5 @@ def KidBit(myMessage=None):
     print("Did you notice the comment on KidBit function?")
 
 #%% You can call the function like below
-KidBit()
+KidBit(55+555)
 

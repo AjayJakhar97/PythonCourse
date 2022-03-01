@@ -29,6 +29,7 @@
 #%% get absolute value of a number
 (5)
 
+
 #%%
 (-5)
 abs(-5)
@@ -37,10 +38,11 @@ abs(-5)
 
 # %%
 pow(2, 5)
+
 #%%
 pow(2, 5, 5 ) # 3rd parameter can used to do this : pow(2, 5)%5
 
-# use pow() if you need an integer outcome and math.pow() for a floating-point result.
+#%% use pow() if you need an integer outcome and math.pow() for a floating-point result.
 import math
 math.pow(2, 5)
 

@@ -31,7 +31,7 @@ print(txt)
 txt = "Hello\rWorld!"
 print(txt)
 
-string = 'I did an awesome job on that project. \r and you did '
+string = 'I did an awesome job on that project. \r you did '
 print(string)
 
 #%% \t	Tab	
@@ -77,4 +77,5 @@ print(txt)
 txt = "\x48\x65\x6c\x6c\x6f"
 print(txt) 
 
-# %%
+# %% 
+

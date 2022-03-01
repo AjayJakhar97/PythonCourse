@@ -9,7 +9,6 @@ def myAbs(number):
     else:
         return -number
 
-
 source_myAbs = inspect.getsource(myAbs)
 print(source_myAbs)
 # it seems to work only for objects defined in a file. Not for those defined in interpreter
@@ -18,4 +17,7 @@ print(source_myAbs)
 source_max = inspect.getsource(max)  # max is a built-in function
 print(source_max)
 
-# %%
+
+# %% import functions from another file
+from MyFunctions import *
+AddTenFunction(5)

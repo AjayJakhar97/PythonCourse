@@ -2,6 +2,7 @@
 
 x = 5
 y = "John"
+
 print(type(x))
 print(type(y))
 
@@ -12,35 +13,51 @@ x = "Hello World"  # Data Type : str
 
 #%% Numeric types
 x = 20  # Data Type : int	; Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length
+print(type(x))
 # Data Type : float	; Float, or "floating point number" is a number, positive or negative, containing one or more decimals.
 x = 20.5
+print(type(x))
 # Float can also be scientific numbers with an "e" to indicate the power of 10.
 x = 35e3
+print(type(x))
 # Data Type : complex	; Complex numbers are written with a "j" as the imaginary part:
 x = 1j
+print(type(x))
+
 # real number + Complex numbers are written with a "j" as the imaginary part:
 x = 3+5j
+print(type(x))
 
 #%% Sequence Types
 x = ["apple", "banana", "cherry"]  # Data Type : list
+print(type(x))
+
 x = ("apple", "banana", "cherry")  # Data Type : tuple
+print(type(x))
+
 x = range(6)  # Data Type : range
+print(type(x))
 
 #%% Mapping Type
 x = {"name": "John", "age": 36}  # Data Type : dict
+print(type(x))
 
-y = {
-    "name": "John",
-    "age": 36
-}
-
+x = {
+        "name": "John",
+        "age": 36
+    }
+print(type(x))
 
 #%% Set Types
 x = {"apple", "banana", "cherry"}  # Data Type : set
-y = frozenset({"apple", "banana", "cherry"})  # Data Type : frozenset
+print(type(x))
+
+x = frozenset({"apple", "banana", "cherry"})  # Data Type : frozenset
+print(type(x))
 
 #%% Boolean Type
 x = True  # Data Type : bool
+print(type(x))
 
 #%% Binary Types
 x = b"Hello"  # Data Type : bytes

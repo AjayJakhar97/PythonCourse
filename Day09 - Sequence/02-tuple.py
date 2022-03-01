@@ -22,4 +22,48 @@ print(id(tuple_data))
 list_data = [1,2,33,5,2]
 tuple_data = (1,2,33,5,2)
 print(list_data != tuple_data)
-# %%
+
+# %% You can create a list of tuple by putting () around a the elements
+studentList = ("Ram", "Gita", "Chris")
+print(studentList)
+
+count = 0
+for item in studentList:
+    count = count + 1
+print(f"Total elements : {count}")
+
+#%% even this will create a tuple 
+studentList = "Ram", "Gita", "Chris"
+
+print(studentList)
+
+count = 0
+for item in studentList:
+    count = count + 1
+print(f"Total elements : {count}")
+
+#%% but we shouldn't do this. try 
+
+studentList1 = "Ram"
+print(studentList1)
+count = 0
+for item in studentList1:
+    count = count + 1
+print(f"Total elements : {count}")
+
+#%%
+studentList2 = ("Ram")
+print(studentList2)
+
+count = 0
+for item in studentList2:
+    count = count + 1
+print(f"Total elements : {count}")
+
+#%% What if have to get one element out of this for example just "Ram" as one?
+studentList = ["Ram"]
+
+count = 0
+for item in studentList:
+    count = count + 1
+print(count)
