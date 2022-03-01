@@ -147,15 +147,15 @@ areaTriangle(1, 2)
 # %% Test02 - areaTriangle(1,4)
 areaTriangle(1, 4)
 
-# %% Task 03 - Write a function 'Fahrenheit_To_Celcius'.
-'''Celcius = 5/9 * (Fahrenheit - 32)'''
+# %% Task 03 - Write a function 'Fahrenheit_To_Celsius'.
+'''Celsius = 5/9 * (Fahrenheit - 32)'''
 
-def Fahrenheit_To_Celcius(TempratureInFahrenheit):
-    TempratureInCelcius = 5/9 * (TempratureInFahrenheit - 32)
-    print(TempratureInFahrenheit, "Farhenheit = ",
-          TempratureInCelcius, "Celcius")
+def Fahrenheit_To_Celsius(TemperatureInFahrenheit):
+    TemperatureInCelsius = 5/9 * (TemperatureInFahrenheit - 32)
+    print(TemperatureInFahrenheit, "Fahrenheit = ",
+          TemperatureInCelsius, "Celsius")
 
-Fahrenheit_To_Celcius(212)
+Fahrenheit_To_Celsius(212)
 
 
 # %%  Notice while True
