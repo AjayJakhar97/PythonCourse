@@ -5,7 +5,7 @@ y = "Hello, World!"   # Data Type : str
 print(x)
 print(f'{x}')
 print(f'{x=}')
-y = "Hello, World!" 
+y = "Hello, World!"
 print(f'{y=}')
 
 #%% A variable is created the moment you first assign a value to it. below won't work
@@ -48,6 +48,7 @@ day = input("What day is today?")
 print(day + "! I like "+day)
 print(day * 2)
 print("Happy " + day)
+# print(day-1)
 
 # Variable Names
 # ==========================
@@ -68,9 +69,9 @@ myvar2 = "Earth"
 
 #%% Illegal variable names:
 
-# 2myvar = "Earth"
-# my-var = "Earth"
-# my var = "Earth"
+2myvar = "Earth"
+my-var = "Earth"
+my var = "Earth"
 
 #%% 3 famous cases used are below
 # Camel Case
@@ -81,7 +82,6 @@ MyVariableName = "Bill"
 
 # Snake Case
 my_variable_name = "Bill"
-
 
 #%%
 """
@@ -112,19 +112,16 @@ You'll just get a syntax error:
 
 #%%
 """
-Note: for readability, if you feel that you need to use one of these as a 
-variable, you could use an underscore after it. For example, and_, class_, etc.
+Note: for readability, if you feel that you need to use one of these as a variable, you could use an underscore after it. For example, and_, class_, etc.
 That makes it different from the Python keyword.
 """
 #%%
-newEngland = ["Maine", "New Hampshire", "Vermont", "Rhodes Island",
-              "Massachusetts", "Connecticut"]
+newEngland = ["Maine", "New Hampshire", "Vermont", "Rhodes Island", "Massachusetts", "Connecticut"]
 
 
 def for_state(state_list):
     for state in state_list:
         print(state)
-
 
 # Output Variables
 #%% To combine both text and a variable, Python uses the + character:
@@ -134,12 +131,14 @@ print("Weather is " + x)
 #%% You can also use the + character to add a variable to another variable:
 x = "Weather is "
 y = "amazing"
+
 z = x + y
 print(z)
 
 #%% For numbers, the + character works as a mathematical operator
 x = 5
 y = 10
+
 print(x + y)
 
 #%% If you try to combine a string and a number, Python will give you an error:
@@ -152,10 +151,8 @@ print(x + y)
 
 x = "amazing"
 
-
 def myfunc():
   print("Weather is " + x)
-
 
 myfunc()
 
@@ -163,11 +160,9 @@ myfunc()
 #%% The global variable with the same name will remain as it was, global and with the original value.
 x = "amazing"
 
-
 def myfunc():
   x = "fantastic"
   print("Weather is " + x)
-
 
 myfunc()
 
@@ -176,28 +171,17 @@ print("Weather is " + x)
 # The global Keyword
 # Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
 
-#%% To create a global variable inside a function, you can use the global keyword.
-
-
-def myfunc():
-  global x
-  x = "fantastic"
-
-
-myfunc()
-
-print("Weather is " + x)
+# To create a global variable inside a function, you can use the global keyword.
 
 # Also, use the global keyword if you want to change a global variable inside a function.
 #%% To change the value of a global variable inside a function, refer to the variable by using the global keyword:
 
 x = "amazing"
 
-
 def myfunc():
   global x
   x = "fantastic"
-
+  print("Weather is " + x)
 
 myfunc()
 
@@ -209,7 +193,6 @@ x = "global"
 
 def foo():
     print("x inside:", x)
-
 
 foo()
 print("x outside:", x)
@@ -223,13 +206,14 @@ def foo():
 
 foo()
 print(x)
+
 # %% Example 2: Accessing local variable outside the scope
 def foo():
-    y = "local"
-
+    Achintya = "local"
 
 foo()
-print(y)
+print(Achintya)
+
 
 #%% Example 3: Create a Local Variable
 def foo():
@@ -249,13 +233,14 @@ def foo():
     print(y)
 
 foo()
+print(x)
+
 # %% Example 5: Global variable and Local variable with same name
 x = 5
 
 def foo():
     x = 10
     print("local x:", x)
-
 
 foo()
 print("global x:", x)
@@ -264,6 +249,8 @@ print("global x:", x)
 # Let's see an example of how a nonlocal variable is used in Python.
 
 # %% Example 6: Create a nonlocal variable
+x = "Global"
+
 def outer():
     x = "local"
 
@@ -271,11 +258,9 @@ def outer():
         nonlocal x # comment this to see the difference
         x = "nonlocal"
         print("inner:", x)
-
     inner()
     print("outer:", x)
 
-x = "Global"
 outer()
 print("Main:", x) 
 

@@ -4,7 +4,7 @@
 
 #%% Let's see a quick example
 i = 1
-# Notice carefully, I am puttng a 4 spaces as an indentation below
+# Notice carefully, I am putting a 4 spaces as an indentation below
 if i == 1:
     print("I have four spaces here...")
 
@@ -13,9 +13,9 @@ if i == 1:
 if 5 > 2:
  print("Five is greater than two!")
 if 5 > 2:
-    print("Five is greater than two!")
+            print("Five is greater than two!")
 
-#%% Notice carefully, I am puttng a single space as an indentation now..
+#%% Notice carefully, I am putting a single space as an indentation now..
 if i == 1:
  print("I have a single spaces here...")
 
@@ -27,7 +27,7 @@ if i == 1:
 #%% You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:
 if 5 > 2:
     print("Five is greater than two!")
-    # print("Five is greater than two!")
+    print("Five is greater than two!")
 
 
 # %%
