@@ -99,7 +99,7 @@ print("ended.......")
 
 def table(myNumber, start = 1):
     if start <= 10:
-        result = table(myNumber,start + 1) +1
+        result = table(myNumber,start + 1) + 1
         print(myNumber*result)
     else:
         result = 0
@@ -113,6 +113,8 @@ print("ended.......")
 
 # %% 2nd method
 
+someNumber = 5
+
 def table(start = 1):
     if start <= 10:
         result = 1 + table(start+1)
@@ -122,23 +124,24 @@ def table(start = 1):
         result = 0
     return result
 
-someNumber = 5
 table()
 
 print("ended.......")
 
-# %% Task01 - What do you think the result will be for below?
+# %% Task01 - What do you think the result will be for the below?
+
+someNumber = 5
 
 def table(someNumber,start = 1):
     if start <= 10:
-        result = 1 + table(start+1)
+        result = 1 + table(start+1) # I am calling with just one argument instead of two
         print( someNumber * result)
     else:
         result = 0
     return result
 
-someNumber = 5
-table(someNumber)
+
+table(someNumber,4)
 
 print("ended.......")
 
@@ -147,6 +150,7 @@ print("ended.......")
 def AddTwoNumbers(x, y):
     return x+y
 
+AddTwoNumbers(3,4)
 
 # %% Task04 - Create your own version of absolute and print functions
 
