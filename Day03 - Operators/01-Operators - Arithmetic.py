@@ -5,7 +5,7 @@
 # ==============================
 
 #%% Addition
-2+5
+2 + 5
 
 #%% Subtraction
 2-5
@@ -22,22 +22,23 @@
 #%% Modulus (To get the remainder)
 5 % 2
 
-#%%
 #%% The Python ** operator is used to raise a number in Python to the power of an exponent
 2**5
+# it is equal to 2*2*2*2*2
 
 #%% get absolute value of a number
 (5)
 
-
 #%%
 (-5)
 abs(-5)
+
 #%%
 (5-5)
 
 # %%
 pow(2, 5)
+# it is equal to 2*2*2*2*2 or 2**5
 
 #%%
 pow(2, 5, 5 ) # 3rd parameter can used to do this : pow(2, 5)%5
@@ -46,3 +47,5 @@ pow(2, 5, 5 ) # 3rd parameter can used to do this : pow(2, 5)%5
 import math
 math.pow(2, 5)
 
+
+# %%

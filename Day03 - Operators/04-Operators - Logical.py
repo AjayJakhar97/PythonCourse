@@ -17,3 +17,4 @@ print(x < 5 or x < 3)
 x = 2
 print(not(x < 5 and x < 10))
 
+# %%

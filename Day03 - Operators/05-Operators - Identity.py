@@ -4,6 +4,7 @@
 #%%
 x = 3
 y = 31
+# y = 3
 
 print(x is y)
 print(x is not y)
@@ -11,3 +12,4 @@ print(x is not y)
 print(f"Memory location of x is {id(x)}")
 print(f"Memory location of y is {id(y)}")
 
+# %%

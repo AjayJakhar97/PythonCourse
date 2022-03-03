@@ -13,3 +13,12 @@ print("pineapple" in x)
 
 print("banana" not in x)
 print("pineapple" not in x)
+
+# %%
+y = [1,2,4,0]
+
+print(1 in y)
+print(3 in y)
+
+print(1 not in y)
+print(3 not in y)
