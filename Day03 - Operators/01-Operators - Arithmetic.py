@@ -26,6 +26,17 @@
 2**5
 # it is equal to 2*2*2*2*2
 
+#%% Find square root : numer ** 0.5
+
+mylist = [
+1 ** 0.5,
+2 ** 0.5,
+36 ** 0.5,
+81 ** 0.5]
+
+for item in mylist:
+    print(item)
+
 #%% get absolute value of a number
 (5)
 

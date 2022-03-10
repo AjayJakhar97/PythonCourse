@@ -12,6 +12,20 @@ Operator	Description	Syntax
 <<	Bitwise left shift	x<<
 '''
 
+#%% Convert int 40 to binary
+print(format(6, "b"))
+
+#%% Convert binary 1110 to an int 
+print(int('0110',2))
+
+#%% Let's have a look at binary numbers and try to see a pattern
+
+for i in range(21):
+    print(f"{i} = ",{format(i,"b")})
+
+#%% How to convert number to binary manually
+# https://www.rapidtables.com/convert/number/decimal-to-binary.html
+
 #%% Examples of Bitwise operators
 a = 10
 b = 4
@@ -19,13 +33,21 @@ print(f"{a} in binary :",format(a,"b"))
 print(f"{b} in binary :",format(b,"b"))
 
 #%% Print bitwise AND operation
-print(a & b)
-
+'''
+10 in binary : 1010
+4 in binary  : 0100
+======================
+a & b        : 0000
+======================
+'''
+#%%
 # 1010
 # 0100
 # ======
 # 0000
 # ======
+
+print(a & b)
 
 #%% Print bitwise OR operation
 print(a | b)
@@ -36,6 +58,14 @@ print(a | b)
 # 1110
 # ======
 
+'''
+01
+11
+====
+11
+===
+'''
+
 # Convert int 40 to binary
 print(format(14, "b"))
 
@@ -43,7 +73,7 @@ print(format(14, "b"))
 # ~   NOT : Inverts all the bits
 print(format(5, "b"))
 x = 5  # 101 in binary
-x = ~x # -x-1 = -(101+1) = -(110) = -6
+x = ~x # -x-1 = -(101 + 001) = -(110) = -6
 
 '''
 101
@@ -58,9 +88,7 @@ opposite (Inverts or One's complement ) of 001 is 110
 '''
 
 print(x)
-
 print(int('110',2))
-
 
 #%% print bitwise XOR operation
 a = 10
@@ -95,8 +123,8 @@ print(a >> 2)
 # print(x)    #  2
 #             #  0010
 
-# print(format(2, "b"))
-# print(int('0010',2))
+print(format(2, "b"))
+print(int('0010',2))
 
 #%% print bitwise left shift operation
 print(a << 2)
@@ -106,10 +134,3 @@ print(a << 2)
 # print(x)    #  40
 #             #  101000
 
-#%% Convert int 40 to binary
-print(format(6, "b"))
-
-#%% Convert binary 1110 to an int 
-print(int('0110',2))
-
-# %%

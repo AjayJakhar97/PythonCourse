@@ -93,8 +93,6 @@ myList[3:]
 
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 
-
-
 # Solution
 # print(thislist[:4])
 
@@ -124,7 +122,7 @@ myList = ["a", "b", "c", "d", "e", "f"]
 "r" not in myList
 
 # List - How to change items
-#%% =====================
+# =====================
 
 #%% To add an item to the end of the list, use the append() method. It will add/insert at the end of the list
 thislist = ["apple", "banana", "cherry"]
@@ -166,12 +164,12 @@ thistuple = ("kiwi", "orange") # Tuple
 thislist.extend(thistuple) # Adding tuple to list
 print(thislist) # List
 
-# Note: 'tuple' object has no attribute 'extend'
+#%% Note: 'tuple' object has no attribute 'extend'
 
-# thislist = ["apple", "banana", "cherry"]
-# thistuple = ("kiwi", "orange")
-# thistuple.extend(thislist)
-# print(thistuple)
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thistuple.extend(thislist)
+print(thistuple)
 
 #%% List - Change list items
 # ==========================
@@ -208,6 +206,11 @@ print(thislist)
 #%% The remove() method removes the specified item.
 thislist = ["apple", "banana", "cherry"]
 thislist.remove("banana")
+print(thislist)
+
+#%% If you do not specify the value, remove() method will fail
+thislist = ["apple", "banana", "cherry"]
+thislist.remove()
 print(thislist)
 
 #%% To remove using index value, use pop(index)
@@ -264,7 +267,6 @@ while i < len(thislist):
   print(thislist[i])
   i = i + 1
 
-
 #%% Iterable
 '''
 The iterable can be any iterable object, like a list, tuple, set etc.
@@ -320,8 +322,9 @@ for x in fruits:
     newlist.append(x.upper()) 
 print(newlist)
 
-# newlist = [x.upper() for x in fruits]
-# print(newlist)
+#%%
+newlist = [x.upper() for x in fruits]
+print(newlist)
 
 #%% Without list comprehension you will have to write a for statement with a conditional test inside
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
@@ -352,6 +355,265 @@ fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 print(fruits)
 newlist = [x if x != "banana" else "orange" for x in fruits]
 print(newlist)
+
+
 # The expression in the example above says:
 # "Return the item if it is not banana, if it is banana return orange".
+
+
+# =======================================
+# Sort Lists - Ascending and Descending
+# =======================================
+
+# %% Sort the list alphabetically and numerically :
+
+thislist1 = ["orange", "mango", "kiwi", "pineapple", "banana"]
+sorted(thislist1)
+print(thislist1)  # sorted() doesn't change and retains the original list
+
+thislist2 = [3, 7, 3, 1, 0, 5]
+print(sorted(thislist2))
+
+# %% You can use sorted() on any iterable and not limited to list
+meme = ({
+    "tags": "Tardar Sauce, Tabatha Bundesen, Felis domesticus",
+    "ID": 1,
+    "rank": 10,
+    "topText": "",
+    "bottomText": "Good!",
+    "name": "Grumpy Cat",
+    "image": "http://imgflip.com/s/meme/Grumpy-Cat.jpg",
+    "detail": "Grumpy Cat is the nickname given to Tardar Sauce, a snowshoe cat that rose to online fame after several pictures of her annoyed facial expressions were posted to Reddit in late September 2012.",
+})
+
+sortedMeme = sorted(meme)
+print(sortedMeme)  # This is a list now
+
+var1 = sorted({1: 'D', 3: 'B', 4: 'E', 2: 'B', 5: 'A'})
+print(var1)  # This is a list now
+
+# %% Using inbuilt sort() method of list to sort it
+
+# Example 1
+thislist1 = ["orange", "mango", "kiwi", "pineapple", "banana"]
+sorted(thislist1)
+print(thislist1)  # sorted() doesn't change and retains the original list
+
+thislist1.sort()
+print(thislist1)  # sort() changes the original list
+
+# Example 2
+thislist2 = [3, 7, 3, 1, 0, 5]
+thislist2.sort()
+print(thislist2)
+
+# %% ... but this means you can use it for only list and not any other iterable
+meme = ({
+    "tags": "Tardar Sauce, Tabatha Bundesen, Felis domesticus",
+    "ID": 1,
+    "rank": 10,
+    "topText": "",
+    "bottomText": "Good!",
+    "name": "Grumpy Cat",
+    "image": "http://imgflip.com/s/meme/Grumpy-Cat.jpg",
+    "detail": "Grumpy Cat is the nickname given to Tardar Sauce, a snowshoe cat that rose to online fame after several pictures of her annoyed facial expressions were posted to Reddit in late September 2012.",
+})
+
+meme.sort()
+print(meme)
+
+# %% To sort descending, use the keyword argument reverse = True
+
+thislist1 = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist1.sort(reverse=True)
+print(thislist1)
+
+thislist2 = [3, 7, 3, 1, 0, 5]
+thislist2.sort(reverse=True)
+print(thislist2)
+
+thislist3 = [20, 10, 0, 50, 70]
+print(sorted(thislist3, reverse=True))
+
+# %% By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters:
+# Case sensitive sorting can give an unexpected result:
+
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+print(thislist)
+
+# %% So if you want a case-insensitive sort function, use str.lower as a key function
+
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key=str.lower)
+print(thislist)
+
+# %% Customize Sort Function :
+'''
+list.sort() and sorted() can be added a key parameter to specify a function to be called on each list element prior to making comparisons.
+'''
+# %% Sort the list based on how close the number is to 50:
+
+
+def myfunc(n):
+    return abs(n - 50)
+
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key=myfunc)
+print(thislist)
+
+# The value of the key parameter should be a function that takes a single argument and returns a key to use for sorting purposes. This technique is fast because the key function is called exactly once for each input record.
+
+sorted("This is a test string from Sunil".split(), key=str.lower)
+
+# %% Let's understand this step by step.
+# str.lower takes 1 parameter. check below
+str.lower("AWESOME")
+
+# %% Now, let's break it to below
+var1 = "This is a test string from Andrew".split()
+sorted(var1, key=str.lower)
+
+# %% The reverse() method reverses the current sorting order of the elements, regardless of the alphabet
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.reverse()
+print(thislist)
+
+# %% A common pattern is to sort complex objects using some of the object's indices as a key. For example
+student_tuples = [
+    ('john', 'A', 15),
+    ('jane', 'B', 12),
+    ('dave', 'B', 10),
+]
+
+sorted(student_tuples, key=lambda student: student[2])   # sort by age
+
+
+# https://wiki.python.org/moin/HowTo/Sorting/
+
+
+# %% Copy a List using copy() function of list
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+
+# %% Let's test now
+thislist.append("grapes")
+print(thislist)
+print(mylist)
+# %%  You cannot copy a list simply by typing list2 = list1, because: list2 will only be a reference to list1, and changes made in list1 will automatically also be made in list2.
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist
+
+thislist.append("grapes")
+print(thislist)
+print(mylist)
+
+#%% try again with index now
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist
+
+thislist[0] = "grapes"
+print(thislist)
+print(mylist)
+
+# %% Another way to make a copy is to use the built-in method list().
+
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+
+thislist.append("grapes")
+print(thislist)
+print(mylist)
+
+# %% Join Two Lists
+# Method 1 : using the + operator
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+
+# %% Method 2 : append() method of list object
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+    list1.append(x)
+
+print(list1)
+
+# %% Method 3 : extend() method of list object
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+print(list1)
+
+# %% count()	Returns the number of times a specified value occurs in a string
+
+list1 = ["a", "b", "c", "a", "b", "c", "a", "b", "c"]
+
+x = list1.count("a")
+print(x)
+
+# %%
+
+#%% Two Sum
+
+'''
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+Example 2:
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+Example 3:
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+'''
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for item1 in range(len(nums)):
+            for item2 in range(len(nums)):
+                if item1 != item2:
+                    if nums[item1] + nums[item2] == target:
+                        myList = item1,item2
+                        return myList
+# nums = [3,2,4]
+# nums = [3,3]
+nums = [3,4,0,1,2,1]
+target = 6
+
+sl = Solution()
+result = sl.twoSum(nums,target)
+print(result)
+
+# %%
 
