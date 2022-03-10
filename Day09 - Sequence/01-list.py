@@ -483,15 +483,18 @@ print(thislist)
 # %% A common pattern is to sort complex objects using some of the object's indices as a key. For example
 student_tuples = [
     ('john', 'A', 15),
-    ('jane', 'B', 12),
+    ('jane', 'C', 12),
     ('dave', 'B', 10),
 ]
 
-sorted(student_tuples, key=lambda student: student[2])   # sort by age
-
+# sort by 2nd column
+result = sorted(student_tuples, key=lambda student: student[1])
+print(result)
+# sort by 3rd column
+result = sorted(student_tuples, key=lambda student: student[2])
+print(result)
 
 # https://wiki.python.org/moin/HowTo/Sorting/
-
 
 # %% Copy a List using copy() function of list
 
@@ -593,27 +596,80 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 '''
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        for item1 in range(len(nums)):
-            for item2 in range(len(nums)):
-                if item1 != item2:
-                    if nums[item1] + nums[item2] == target:
-                        myList = item1,item2
-                        return myList
+# Solution 1: Brute Force
+'''
+The brute force approach is simple. Loop through each element xx and find if there is another value that equals to target - xtarget−x.
+'''
+def twoSum(nums, target):
+    for item1 in range(len(nums)):
+        for item2 in range(item1 + 1,len(nums)):
+            if nums[item2] == target - nums[item1]:
+                return [item1,item2]
+
 # nums = [3,2,4]
 # nums = [3,3]
-nums = [3,4,0,1,2,1]
+nums = [3, 4, 0, 1, 2, 1]
 target = 6
-
-sl = Solution()
-result = sl.twoSum(nums,target)
+result = twoSum(nums, target)
 print(result)
 
-# %%
+# %% Solution 2: Time Complexity - O(n) ; Space Complexity - O(n)
 
+def twoSum(nums, target): 
+    low = 0
+    high = len(nums) - 1
+    print(f"Unsorted array: {nums}")
+    arr = sorted(nums)
+    arrIndex = sorted(range(len(nums)),key=lambda k:nums[k])
+    print(f"Sorted array: {arr}")
+    print(f"Sorted arrIndex: {arrIndex}")
+
+    while low < high:
+        sum = arr[low] + arr[high]
+        if sum == target:
+            return arrIndex[low], arrIndex[high]
+        elif sum < target:
+            low += 1
+        else:
+            high -= 1
+
+nums = [3, 4, 0, 1, 2, 1]
+target = 6
+result = twoSum(nums, target)
+print(result)
+
+#%% Solution 3: Two-pass Hash Table
+'''
+A simple implementation uses two iterations. In the first iteration, we add each element's value as a key and its index as a value to the hash table. Then, in the second iteration, we check if each element's complement (target - nums[i]target−nums[i]) exists in the hash table. If it does exist, we return current element's index and its complement's index. Beware that the complement must not be nums[i]nums[i] itself!
+'''
+def twoSum(nums, target):
+    hashmap = {}
+    for i in range(len(nums)):
+        hashmap[nums[i]] = i
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashmap and hashmap[complement] != i:
+            return [i, hashmap[complement]]
+
+nums = [3, 4, 0, 1, 2, 1]
+target = 6
+result = twoSum(nums, target)
+print(result)
+
+#%% Solution 4: One-pass Hash Table
+'''
+A simple implementation uses two iterations. In the first iteration, we add each element's value as a key and its index as a value to the hash table. Then, in the second iteration, we check if each element's complement (target - nums[i]target−nums[i]) exists in the hash table. If it does exist, we return current element's index and its complement's index. Beware that the complement must not be nums[i]nums[i] itself!
+'''
+def twoSum(nums, target):
+    hashmap = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashmap:
+            return [i, hashmap[complement]]
+        hashmap[nums[i]]  = i
+
+nums = [3, 4, 0, 1, 2, 1]
+target = 6
+result = twoSum(nums, target)
+print(result)
+# %%
