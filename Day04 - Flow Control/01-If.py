@@ -2,8 +2,9 @@
 Python Conditions and If statements
 Python supports the usual logical conditions from mathematics:
 
-
 These conditions can be used in several ways, most commonly in "if statements" and loops.
+
+Syntax : if-elif-else
 
 '''
 #%% An "if statement" is written by using the if keyword.

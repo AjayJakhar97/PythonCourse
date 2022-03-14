@@ -1,7 +1,17 @@
 {
-    "python.testing.pytestArgs": [
-        "Day24 - Project"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "suppliers",
+            "username": "SunMan",
+            "password": "root",
+            "name": "MySQL Connection to suppliers DB"
+        }
+    ]
 }

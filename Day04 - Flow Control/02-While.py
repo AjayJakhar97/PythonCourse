@@ -52,6 +52,16 @@ while i < 6:
 else:
   print("i is no longer less than 6")
 
+
+#%% print 1,2,3
+
+x = 3
+y = 0
+
+while y < x:
+    print(y+1)
+    y = y + 1
+
 #%% Make sure you know how to find modulus for next exercise 
 
 print(3%1)
@@ -81,7 +91,6 @@ FizzBuzz
 
 '''
 
-
 #%% Solution
 
 def fizzBuzz(n):
@@ -103,15 +112,5 @@ if __name__ == '__main__':
     n = int(input().strip())
 
     fizzBuzz(n)
-
-
-#%% 
-
-x = 3
-y = 0
-
-while y < x:
-    print(y+1)
-    y = y + 1
 
 # %%
