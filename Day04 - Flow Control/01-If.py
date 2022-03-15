@@ -13,16 +13,22 @@ b = 200
 if b > a:
   print("b is greater than a")
 
-# The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".
+#%% If you don't specify conditional expression it is checking if variable is true or not.
+
+a = 33
+b = 200
+if b:
+  print("b is greater than a")
 
 # %% or like below can rewrite this like below
+# The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".
 a = 333
 b = 200
 
 if b > a:
     print("b is greater than a")
 elif b < a:
-    print("b is smaller than a")
+    print("b is smaller or equal to a")
 
 # %% The else keyword catches anything which isn't caught by the preceding conditions.
 
@@ -59,10 +65,32 @@ b = 200
 print("A") if a > b else print("B")
 
 #%% You can also have multiple else statements on the same line:
+'''
+1- start from right
+2- If TRUE:
+
+'''
+a = 0
+b = 330
+print("A") if a > b else print("=") if a == b else print("B")
+
+# Breakdown of the solution
+print("A") if a > b else print("=") # You get --> print("=")
+print("=") if a == b else print("B")
+
+a = 330
+b = 0
+print("A") if a > b else print("=") if a == b else print("B")
+# Breakdown of the solution
+print("A") if a > b else print("=") # You get --> print("A") 
+print("A") if a > b else print("=") if a == b else print("B")
 
 a = 330
 b = 330
 print("A") if a > b else print("=") if a == b else print("B")
+# Breakdown of the solution
+print("A") if a > b else print("=") if a == b else print("B") # You get --> print("=")
+print("=") if a == b else print("B")
 
 #%% The and keyword is a logical operator, and is used to combine conditional statements
 # Test if a is greater than b, AND if c is greater than a:
@@ -99,4 +127,43 @@ b = 200
 
 if b > a:
   pass
+
+#%% Task01 - Take input of three numbers and find the maximum among them
+
+'''
+Input
+==========
+a = 1
+b = 2
+c = 3
+
+Output
+==========
+max is 3
+
+Input
+==========
+a = 3
+b = 2
+c = 1
+
+Output
+==========
+max is 3
+
+'''
+
+#%% Solution 01 - Take input of three numbers and find the maximum among them
+
+a = int(input("Enter a : "))
+b = int(input("Enter b : "))
+c = int(input("Enter c : "))
+
+max = a
+if b > max:
+  max = b
+if c > max:
+  max = c
+
+print(f"max is {max}")
 

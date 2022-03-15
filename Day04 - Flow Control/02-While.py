@@ -68,6 +68,42 @@ print(3%1)
 print(3%2)
 print(3%3)
 
+# =================
+# Assignments
+# =================
+
+#%% Count how many times a number comes again
+'''
+input = 1,2,4,5,4,3,2,6,4,0,1
+
+output : 
+1: 2
+2: 2
+3: 1
+4: 3
+5: 1
+6: 1 
+'''
+
+
+#%% Take the input and print that Fibonacci number
+
+'''
+Fibonacci number: 0,1,1,2,3,5,8,13,...
+'''
+myNumber = int(input("Which Fibonacci number do you want to print? : "))
+a = 0
+b = 1
+count = 2
+if myNumber >= 2:
+  while count <= myNumber:
+    c = a + b
+    a = b
+    b = c
+    count += 1
+  print(c)
+
+
 # %% Exercise - 
 '''
 Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:
@@ -114,3 +150,4 @@ if __name__ == '__main__':
     fizzBuzz(n)
 
 # %%
+
