@@ -11,6 +11,10 @@
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
 
+thistuple = ("apple")
+print(thistuple)
+
+
 #%% Create Tuple With One Item
 # To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
 
@@ -50,14 +54,17 @@ print(id(tuple_data))
 
 list_data1 = [1,2,33,5,2]
 list_data2 = [1,2,33,5,2]
+
 print(list_data1 is list_data2)
 print(list_data1 == list_data2)
 
 #%% You can't compare list with tuple
-tuple_data = (1,2,33,5,2)
-print(list_data1 != tuple_data)
 
-# %% You can create a list of tuple by putting () around a the elements
+list_data1 = [1,2,33,5,2]
+tuple_data = (1,2,33,5,2)
+print(list_data1 == tuple_data)
+
+# %% You can use len to count the number of elements
 studentList = ("Ram", "Gita", "Chris")
 print(studentList)
 
@@ -77,33 +84,35 @@ print(f"Total elements : {count}")
 
 studentList1 = "Ram"
 print(studentList1)
+print(type(studentList1))
 count = len(studentList1)
 print(f"Total elements : {count}")
 
-#%%
+
+#%% or this...
 studentList2 = ("Ram")
 print(studentList2)
+print(type(studentList2))
 
 count = len(studentList2)
 print(f"Total elements : {count}")
 
 #%% What if have to get one element out of this for example just "Ram" as one?
 studentList = ["Ram"]
-
+print(type(studentList))
 count = len(studentList)
 print(count)
-
 
 #%% Change Tuple Values
 # Convert the tuple into a list to be able to change it:
 
 x = ("apple", "banana", "cherry")
 y = list(x)
+
 y[1] = "kiwi"
 x = tuple(y)
 
 print(x)
-
 
 # %% Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or many), create a new tuple with the item(s), and add it to the existing tuple:
 

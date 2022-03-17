@@ -21,3 +21,20 @@ print(x >= y)
 print(x <= y)
 
 # %%
+x = 5
+y = 3
+
+print(x == y)
+
+# %%
+x = 5
+y = 5
+
+print(x == y)
+# %%
+x = 'Hello'
+y = 'Hello'
+
+print(x == y)
+# %%
+
