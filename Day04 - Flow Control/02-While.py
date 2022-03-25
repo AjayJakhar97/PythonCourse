@@ -85,6 +85,20 @@ output :
 6: 1 
 '''
 
+input = [1,1,2,2,3]
+# input = [120,11,34,55,120,11]
+
+for i in input:
+    if seen == i:
+        continue
+    count = 0
+    for j in input:
+        if i == j:
+            count +=1
+            seen = i
+        else:
+            continue
+    print(f"{i} : {count} times")
 
 #%% Take the input and print that Fibonacci number
 

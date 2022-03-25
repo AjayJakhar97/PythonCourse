@@ -11,9 +11,6 @@ Python Inheritance
 #%% Parent Class
 # Create a class named Person, with firstname and lastname properties, and a printname method:
 
-from fnmatch import fnmatch
-
-
 class Person:
   def __init__(self, fname, lname):
     self.firstname = fname

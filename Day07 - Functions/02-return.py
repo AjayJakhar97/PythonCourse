@@ -5,6 +5,26 @@ def Tip():
 
 Tip()
 
+#%% Function processes result on the first return it finds and exits the call
+
+def Tip():
+    return 5
+    return 6
+
+Tip()
+
+
+#%% Function processes result on the first return it finds and exits the call
+
+def CheckOddOrEven(num):
+    if num%2 == 1:
+        return f"{num} is an odd number"
+    else:
+        return f"{num} is an even number"
+
+print(CheckOddOrEven(2))
+print(CheckOddOrEven(3))
+
 # %% To let a function return a value with calculations, use the return statement:
 
 def my_function(x):

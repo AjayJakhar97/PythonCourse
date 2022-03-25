@@ -59,6 +59,14 @@ for x in fruits:
 for x in range(6):
   print(x)
 
+#%% Task01 - print the first 10 odd numbers
+
+# Use for with range:
+
+for item in range(1,20,2):
+    print(item)
+
+
 #%% Increment the sequence with 3 (default is 1):
 
 for x in range(2, 30, 3):
@@ -95,3 +103,6 @@ for x in adjective:
 #%% The pass Statement is allowed in for loops
 for x in [0, 1, 2]:
   pass
+
+#%%
+

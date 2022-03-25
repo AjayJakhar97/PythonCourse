@@ -17,6 +17,20 @@ age = 36
 txt = "My name is John, I am " + age
 print(txt)
 
+# %% Below are two methods to solve this issue
+
+def getAge(age):
+    return age
+
+myAge = getAge(36)
+
+# method 1
+txt = "My name is John, I am " + str(myAge)
+print(txt)
+
+# method 2
+txt = "My name is John, I am {}"
+print(txt.format(myAge))
 
 # %% But we can combine strings and numbers by using the format() method!
 # The format() method takes the passed arguments, formats them, and places them in the string where the placeholders {} are:
@@ -30,15 +44,19 @@ print(txt.format(age))
 quantity = 3
 itemno = 567
 price = 49.95
-myorder = "I want {} pieces of item {} for {} dollars."
+myorder = "I want {} pieces of item {} for ${} dollars."
 print(myorder.format(quantity, itemno, price))
 
+# myOrder = "I want to pay 49.95 dollars for 3 pieces of item 567."
+myOrder = "I want to pay ${} dollars for {} pieces of item {}"
+print(myOrder.format(price, quantity,itemno))
+
 #%% You can use index numbers {0} to be sure the arguments are placed in the correct placeholders:
+
 quantity = 3
 itemno = 567
 price = 49.95
 myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
 print(myorder.format(quantity, itemno, price))
-
 
 # %%
