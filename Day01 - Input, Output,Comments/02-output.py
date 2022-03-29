@@ -85,7 +85,7 @@ print("Sunil's coding classes", end=' ')
 #%% Task01 - How to print 'Python@KidBit.com' using parameter 'end= '
 
 print("Python")
-print("KidBit")
+print("ansh")
 print("com")
 
 # %% Solution 
@@ -106,6 +106,10 @@ anniversary = datetime.date(1991, 10, 12)
 print(name)
 print(age)
 print(anniversary)
+'''
+%A = Saturday
+%B 
+'''
 print(anniversary.strftime('%A, %B %d, %Y'))
 print()
 print(anniversary.strftime('%A, %Y'))

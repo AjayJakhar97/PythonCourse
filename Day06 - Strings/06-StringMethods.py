@@ -112,10 +112,16 @@ print(x)
 # Search from position 10 to 24:
 
 txt = "I love apple , apple are my favorite fruit"
+
 x = txt.count("apple", 8, 24)
-x = txt.count("apple", 7, 24)
+# pple , apple are my favorite fruit
 
 print(x)
+
+x = txt.count("apple", 7, 24)
+# apple , apple are my favorite fruit
+print(x)
+
 
 #%% encode()	Returns an encoded version of the string
 txt = "My name is Ståle"
@@ -162,7 +168,6 @@ txt = "Hello, welcome to my world."
 x = txt.endswith("my world.", 5, 11)
 print(x)
 
-
 #%% expandtabs()	Sets the tab size of the string
 # string.expandtabs(tabsize)
 
@@ -181,6 +186,7 @@ print(txt.expandtabs(10))
 
 txt = "Hello, welcome to my world."
 x = txt.find("welcome")
+x = txt.index("welcome")
 print(x)
 
 
@@ -268,6 +274,10 @@ print(txt.format(5))
 #Use "c" to convert the value into the corresponding unicode character
 
 txt = "The binary version of {0} is {0:c}"
+print(txt.format(65))
+txt = "The binary version of {0} is {0:c}"
+print(txt.format(66))
+txt = "The binary version of {0} is {0:c}"
 print(txt.format(64))
 
 #Use "d" to convert a number, in this case a binary number, into decimal number format:
@@ -315,6 +325,7 @@ print(txt.format(z))
 
 #%% 
 from decimal import *
+
 getcontext()
 getcontext().prec = 7
 txt = "We have {:g} chickens."
@@ -434,8 +445,22 @@ print(b.islower())
 print(c.islower())
 
 #%% isnumeric()	Returns True if all characters in the string are numeric
+txt = "123456"
+print(txt.isnumeric())
 
 #%% isprintable()	Returns True if all characters in the string are printable
+
+txt = "123456"
+print(txt.isprintable())
+
+german = 'ß'
+print(german.isprintable())
+
+txt = 'This is my brother\'s bike'
+print(txt.isprintable())
+
+txt = 'Hello\n World'
+print(txt.isprintable())
 
 #%% isspace()	Returns True if all characters in the string are whitespaces
 

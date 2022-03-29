@@ -23,4 +23,7 @@ print("I want kid's car")
 
 # He said, "The color of 'red' car is awesome"
 
+#%% 
+
+print("He said, \"The color of my brother's car is awesome\"")
 

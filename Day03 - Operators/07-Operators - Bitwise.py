@@ -12,6 +12,10 @@ Operator	Description	Syntax
 <<	Bitwise left shift	x<<
 '''
 
+#%%
+txt = "The binary version of {0} is {0:b}"
+print(txt.format(6))
+
 #%% Convert int 40 to binary
 print(format(6, "b"))
 

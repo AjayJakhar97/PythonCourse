@@ -39,6 +39,7 @@ x = range(6)  # Data Type : range
 print(type(x))
 
 #%% Mapping Type
+# Dictionary
 x = {"name": "John", "age": 36}  # Data Type : dict
 print(type(x))
 
@@ -60,7 +61,11 @@ x = True  # Data Type : bool
 print(type(x))
 
 #%% Binary Types
+
 x = b"Hello"  # Data Type : bytes
+print(type(x))
+
+x = bytes(5)  # Data Type : bytes
 print(type(x))
 
 y = bytearray(5)  # Data Type : bytearray

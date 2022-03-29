@@ -41,7 +41,6 @@ print("Average of mark2:",avg(mark2))
 
 mark1 = []
 print("Average of mark1:",avg(mark1))
-
 '''
 Key Points to Remember
 ============================
