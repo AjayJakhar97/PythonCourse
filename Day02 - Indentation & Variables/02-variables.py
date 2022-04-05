@@ -35,8 +35,14 @@ print(x)
 print(y)
 print(z)
 
+
 #%% If you have a collection of values in a list, tuple etc. Python allows you extract the values into variables. This is called unpacking.
 fruits = ["apple", "banana", "cherry"]
+
+# x = fruit[0]
+# y = fruit[1]
+# z = fruit[2]
+
 x, y, z = fruits
 print(x)
 print(y)
@@ -49,6 +55,11 @@ print(day + "! I like "+day)
 print(day * 2)
 print("Happy " + day)
 # print(day-1)
+
+#%%
+age = 25
+print('my age is ',age)
+print('my age is ' + age)
 
 # Variable Names
 # ==========================
@@ -89,6 +100,16 @@ Caution: Notice that large numbers never include commas. Compare these two examp
 """
 print(12345678)
 print(12, 345, 678)
+
+#%%
+print(1000000000 + 1)
+
+print(000000000000000000000000000000000000000000) 
+# print(000000000000000000000000000000000000000001) 
+print(1,000,000,000 + 1)
+
+
+print(1_000_000_000 + 1)
 
 #%%
 """

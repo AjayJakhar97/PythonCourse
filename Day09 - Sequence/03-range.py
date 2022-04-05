@@ -110,27 +110,16 @@ The advantage of the range type over a regular list or tuple is that a range obj
 # Python program to print Fizz Buzz
  
 # Loop for 100 times i.e. range
-for fizzbuzz in range(1,100):
- 
-    # Number divisible by 15,(divisible
-    # by both 3 & 5), print 'FizzBuzz'
-    # in place of the number
-    if fizzbuzz % 15 == 0:
-        print("FizzBuzz")                                        
-        continue
- 
-    # Number divisible by 3, print 'Fizz'
-    # in place of the number
-    elif fizzbuzz % 3 == 0:    
-        print("Fizz")                                        
-        continue
- 
-    # Number divisible by 5,
-    # print 'Buzz' in
-    # place of the number
-    elif fizzbuzz % 5 == 0:        
-        print("Buzz")                                    
-        continue
- 
-    # Print numbers
-    print(fizzbuzz)
+for item in range(1,101):
+    # Number divisible by 15,(divisible by both 3 & 5)
+    if item % 15 == 0:
+        print(item, "FizzBuzz")
+    # Number divisible by 3
+    elif item % 3 == 0:
+        print(item, "Fizz")
+    # Number divisible by 5
+    elif item % 5 == 0:
+        print(item, "Buzz")
+    else:
+        print(item)
+

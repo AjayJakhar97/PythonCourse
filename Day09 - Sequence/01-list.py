@@ -298,11 +298,12 @@ print(newlist)
 [print(x) for x in range(10) if x < 5]
 print()
 
-#%% List Comprehension (shortest syntax)
+#%% List Comprehension (short syntax)
 '''
 The Syntax
 ===============
-newlist = [expression for item in iterable if condition == True]
+nameOfTheList = [expression for item in iterable if condition == True]
+
 Note: The condition is optional and can be omitted:
 '''
 # =================================================

@@ -1,5 +1,6 @@
 # %% Binary Search (Ordered - ASC and DESC)
-# Find the index of number if you have an ordered list. It can be increasing or decreasing order
+# Find position (or index) of a number in a sorted list. 
+# It can be increasing or decreasing order
 
 def findIndex(arr, target):
     start = 0
@@ -39,35 +40,29 @@ arr = [1, 2, 4, 5, 12, 15, 17, 20, 22, 44, 50]
 target = 16
 print(findIndex(arr, target))
 
-# %% Task - You need to guess if number is correct or not
-# You have 3 chances
-# Output should be 
-    #  "That's the correct number" if guessed correctly or...
-    # 'Sorry! You exhausted 3 chances' if missed all chances
+#%% Find position (or index) of a number in a sorted list in an infinite list.
 
-import random
+def search(arr, target,start,end):
+    while start <= end:
+        mid = int(start + (end - start) / 2)
+        if arr[mid] == target:
+            return mid
+        if arr[mid] < target:
+            start = mid + 1
+        else:
+            end = mid - 1
+    return -1
 
-def GuessTheNumber():
-    chances = 3
-    luckyNumber = random.randint(1,10)
-    while(chances > 0):
-        myNumber = int(input("Enter a number from 1 to 10: "))
-        if myNumber == luckyNumber:
-            return "That's the correct number"
-        chances -= 1
-    else:
-        return "Sorry! You exhausted 3 chances"
+def findIndex(arr, target):
+    start = 0
+    end = 1
+    while arr[end] < target:
+        start = end + 1
+        end = start + (end * 2)
+    return search(arr, target, start, end)
 
-GuessTheNumber()
+arr = [1, 2, 4, 5, 12, 15, 17, 20, 22, 44, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+# arr = [50, 44, 22, 20, 17, 15, 12, 5, 4, 2, 1]
+target = 4
+print(findIndex(arr, target))
 
-
-# %%
-
-chances = 3
-while(chances > 0):
-    myNumber = int(input("Enter the number: "))
-    if myNumber == 3:
-        print("That's the correct number")
-    chances -= 1
-elif chances == 0:
-    print("Sorry! You exhausted 3 chances")

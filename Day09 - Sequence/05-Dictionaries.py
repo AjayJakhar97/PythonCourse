@@ -42,6 +42,7 @@ thisdict = {
   "colors": ["red", "white", "blue"]
 }
 print(thisdict)
+
 # %% dictionaries are defined as objects with the data type 'dict
 
 print(type(thisdict))

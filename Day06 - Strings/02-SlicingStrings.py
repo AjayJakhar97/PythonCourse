@@ -37,5 +37,4 @@ mytxt = my_ReverseString_function("I wonder how this text looks like backwards")
 
 print(mytxt)
 
-
 # %%

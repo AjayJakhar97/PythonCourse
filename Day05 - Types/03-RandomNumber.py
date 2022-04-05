@@ -20,7 +20,7 @@ print(random.randrange(10))
 '''
 You are going to write a virtual coin toss program. It will randomly tell the user "Heads" or "Tails".
 
-Important, the first letter should be capitalised and spelt exactly like in the example e.g. Heads, not heads.
+Important, the first letter should be capitalized and spelt exactly like in the example e.g. Heads, not heads.
 '''
 
 # Remember to use the random module 👇
@@ -38,3 +38,35 @@ else:
 
 #%%
 print (5)
+
+
+# %% Task - You need to guess if number is correct or not
+# You have 3 chances
+# Output should be 
+    #  "That's the correct number" if guessed correctly or...
+    # 'Sorry! You exhausted 3 chances. The number was xx'
+
+def GuessTheNumber(myNumber):
+    pass
+
+GuessTheNumber()
+
+#%% Solution
+
+import random
+
+def GuessTheNumber():
+    chances = 3
+    luckyNumber = random.randint(1,1)
+    while(chances > 0):
+        myNumber = int(input("Enter a number from 1 to 10: "))
+        if myNumber == luckyNumber:
+            return f"{luckyNumber} is the correct number"
+        else:
+            chances -= 1
+            if chances == 0:
+                return f"Sorry! You exhausted 3 chances. The number was {luckyNumber}"
+            else:
+                print("Try again")
+
+GuessTheNumber()

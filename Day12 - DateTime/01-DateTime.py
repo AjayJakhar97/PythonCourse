@@ -7,7 +7,12 @@ print(x)
 # The date contains year, month, day, hour, minute, second, and microsecond
 # The datetime module has many methods to return information about the date object
 #%% Return the year and 
-x.year
+print(x)
+print(x.year)
+print(x.day)
+print(x.month)
+print(x.hour)
+print(x.weekday())
 
 # %% name of weekday
 x.strftime("%A")
@@ -61,4 +66,16 @@ print(f'A % character : {x.strftime("%%")}')
 print(f'ISO 8601 year : {x.strftime("%G")}')
 print(f'ISO 8601 weekday (1-7) : {x.strftime("%u")}')
 print(f'ISO 8601 weeknumber (01-53) : {x.strftime("%V")}')
+
+#%% Write a function to calculate the difference between two dates in days.
+
+def diffDate(start,end): 
+    '''
+    This function returns the difference between two dates in days
+    '''
+    start = datetime.datetime.strptime(start,"%d/%m/%Y")
+    end = datetime.datetime.strptime(end,"%d/%m/%Y")
+    return (end-start).days
+
+diffDate("01/01/2019","01/01/2020")
 

@@ -72,7 +72,6 @@ thisset.remove("banana")
 
 # %% Remove Item - discard() method
 thisset = {"apple", "banana", "cherry"}
-
 thisset.discard("banana")
 
 print(thisset)
@@ -111,7 +110,6 @@ set2 = {1, 2, 3}
 
 set3 = set1.union(set2)
 print(set3)
-
 
 # %% The update() method inserts the items in set2 into set1:
 

@@ -21,7 +21,6 @@ def hello():
 # To call a function, use the function name followed by parenthesis
 hello()
 
-
 # %% Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma
 
 def myName(name):
@@ -37,7 +36,6 @@ An argument is the value that is sent to the function when it is called.
 '''
 
 # %% By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 arguments, you have to call the function with 2 arguments, not more, and not less
-
 
 def my_function(fname, lname):
     print(fname + " " + lname)
@@ -101,16 +99,14 @@ my_function("Brazil")
 
 # %% default parameter can be none
 
-
-def ourschool(name=None):
-    if name:  # means if True or name is not none
-        print(name, " is our school")
+def my_function(country = None):
+    if country:
+        print("I am from " + country)
     else:
-        print("I don't know my school name")
+        print("I am from nowhere")
 
-
-ourschool()
-ourschool("KidBit")
+my_function()
+my_function("India")
 
 # %% The pass Statement
 # function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.
@@ -118,7 +114,6 @@ ourschool("KidBit")
 
 def myfunction():
     pass
-
 
 # %% Task 01- Create a function to calculate area of a circle
 
@@ -168,3 +163,11 @@ kill kernel. Open a new IPConsole on the Console menu to restart """
         pass
 
 forever()
+
+#%% task 04 - Write a function that takes your first name and says Hi to you.
+# for example - 'Hi Sunil'
+
+def Hi(name="Superman"):
+    print("Hi", name)
+
+Hi("Sunil")
