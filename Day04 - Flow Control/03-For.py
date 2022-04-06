@@ -104,5 +104,24 @@ for x in adjective:
 for x in [0, 1, 2]:
   pass
 
-#%%
+#%% Pass and Continue look same to me.. they skip. 
+# Should I use pass or continue?? Check below two examples
+# You can't use pass here
+
+def myFunction():
+  list = [1, 2, 3]
+  for i in list:
+    print(i)
+    if i == 2:
+      # pass
+      continue
+      raise Exception("An error occurred")
+myFunction()
+
+#%% You can't use continue here
+def myFunction():
+  pass
+  # continue
+
+myFunction()
 

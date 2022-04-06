@@ -123,38 +123,225 @@ try:
 except:
     print("Invalid Input")
 
-#%%
+#%% Below shows built-in exceptions that are usually raised in Python
 
-#%% Task 02 - Create a coffee maker program 
-# You have below resources 
-# water, milk, coffee beans and sugar
+try:
+  # 2 + "2"
+  2/0
+  2
+except ArithmeticError:
+  print("ArithmeticError exception. It includes 'OverFlowError', 'ZeroDivisionError' and 'FloatingPointError'")
+except AssertionError:
+  print("Assertion Error")
+except AttributeError:
+  print("Attribute Error")
+# except Exception:
+#   print("Exception")
+except EOFError:
+  print("EOF Error")
+except FloatingPointError:
+  print("Floating Point Error")
+except GeneratorExit:
+  print("Generator Exit")
+except ImportError:
+  print("Import Error")
+except IndentationError:
+  print("Indentation Error")
+except IndexError:
+  print("Index Error")
+except KeyError:
+  print("Key Error")
+except KeyboardInterrupt:
+  print("Keyboard Interrupt")
+except LookupError:
+  print("Lookup Error")
+except MemoryError:
+  print("Memory Error")
+except NameError:
+  print("Name Error")
+except NotImplementedError:
+  print("Not Implemented Error")
+except OSError:
+  print("OS Error")
+except OverflowError:
+  print("Overflow Error")
+except ReferenceError:
+  print("Reference Error")
+except RuntimeError:
+  print("Runtime Error")
+except StopIteration:
+  print("Stop Iteration")
+except SyntaxError:
+  print("Syntax Error")
+except TabError:
+  print("Tab Error")
+except SystemError:
+  print("System Error")
+except SystemExit:
+  print("System Exit")
+except TypeError:
+  print("Type Error")
+except UnboundLocalError:
+  print("Unbound Local Error")
+except UnicodeError:
+  print("Unicode Error")
+except UnicodeEncodeError:
+  print("Unicode Encode Error")
+except UnicodeDecodeError:
+  print("Unicode Decode Error")
+except UnicodeTranslateError:
+  print("Unicode Translate Error")
+except ValueError:
+  print("Value Error")
+except ZeroDivisionError:
+  print("Zero Division Error")
+except Exception:
+  print("Some other error")
+
+#%% Exception hierarchy
+'''
+Exception hierarchy
+The class hierarchy for built-in exceptions is:
+
+BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- Exception
+      +-- StopIteration
+      +-- StopAsyncIteration
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+      |    +-- IndexError
+      |    +-- KeyError
+      +-- MemoryError
+      +-- NameError
+      |    +-- UnboundLocalError
+      +-- OSError
+      |    +-- BlockingIOError
+      |    +-- ChildProcessError
+      |    +-- ConnectionError
+      |    |    +-- BrokenPipeError
+      |    |    +-- ConnectionAbortedError
+      |    |    +-- ConnectionRefusedError
+      |    |    +-- ConnectionResetError
+      |    +-- FileExistsError
+      |    +-- FileNotFoundError
+      |    +-- InterruptedError
+      |    +-- IsADirectoryError
+      |    +-- NotADirectoryError
+      |    +-- PermissionError
+      |    +-- ProcessLookupError
+      |    +-- TimeoutError
+      +-- ReferenceError
+      +-- RuntimeError
+      |    +-- NotImplementedError
+      |    +-- RecursionError
+      +-- SyntaxError
+      |    +-- IndentationError
+      |         +-- TabError
+      +-- SystemError
+      +-- TypeError
+      +-- ValueError
+      |    +-- UnicodeError
+      |         +-- UnicodeDecodeError
+      |         +-- UnicodeEncodeError
+      |         +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+           +-- ImportWarning
+           +-- UnicodeWarning
+           +-- BytesWarning
+           +-- EncodingWarning
+           +-- ResourceWarning
+
 
 '''
-1 cup of coffee uses 
-==========================
-Water : 200 ml
-Milk  : 70 ml
-Coffee beans : 8 gm
-Sugar : 50 gm
+# %% ArithmeticError exception
 '''
+BaseException
+ +-- Exception
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+'''
+import math
 
-# set the quantity of resources for each cup of a coffee and reduce it everytime you make a cup of a coffee
-# if you fall short of resources, you report it
+try:
+  # 1 : OverflowError : # In Python, OverflowError occurs when any operations like arithmetic operations or any other variable storing any value above its limit then there occurs an overflow of values that will exceed it’s specified or already defined limit. 
+  print(math.exp(1000))
 
-# water in ml
-water = 300
+  # 2 : FloatingPointError : Doesn't occur any more. More Info on https://python.readthedocs.io/en/latest/library/fpectl.html
 
-# Milk in ml
-milk = 300
+  # 3 : ZeroDivisionError : # In Python, ZeroDivisionError occurs when any division operation or any other variable storing any value as zero then there occurs an division by zero error.
+  print(5/0)
 
-# coffee beans in gms
-coffeeBeans = 50
+except OverflowError:
+  print("Overflow Error")
+except FloatingPointError:
+  print("Floating Point Error")
+except ZeroDivisionError:
+  print("Zero Division Error")
+except ArithmeticError:
+  print("ArithmeticError exception. It includes 'OverFlowError', 'ZeroDivisionError' and 'FloatingPointError'")
 
-# sugar in gms
-sugar = 500
+#%% indentation error
+# Note: Syntax error should not be handle through exception handling it should be fixed in your code.
 
-# Program
-def makeCoffee():
-    pass
+'''
+# https://stackoverflow.com/questions/8911735/how-to-catch-indentationerror
 
-makeCoffee()
+BaseException
+ +-- Exception
+      +-- SyntaxError
+      |    +-- IndentationError
+      |         +-- TabError
+
+IndentationError is raised when the module is compiled. You can catch it when importing a module, since the module will be compiled on first import. You can't catch it in the same module that contains the try/except, because with the IndentationError, Python won't be able to finish compiling the module, and no code in the module will be run.
+
+So below won't work...
+
+try:
+
+  def f():
+    z=['foo','bar']
+    for i in z:
+      if i == 'foo':
+      pass
+except IndentationError:
+  print("Indentation Error")
+
+print("Done...")
+'''
+try:
+  import test
+except IndentationError:
+  print("Indentation Error")
+
+print("Done...")
+
+# Reference : https://www.datacamp.com/community/tutorials/exception-handling-python
+
+#%% TabError
+
+try:
+  import test
+except TabError:
+  print("Tab Error")
+
+print("Done...")
