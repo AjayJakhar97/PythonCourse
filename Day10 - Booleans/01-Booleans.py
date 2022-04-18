@@ -87,3 +87,97 @@ print(bool(MyObj1))
 # The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
 
 # It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class:
+
+
+#%% any()
+'''
+What you'll cover....
+=======================
+Basic usage of any()
+How to eliminate long or chains from your code?
+How to use any() with list compreshensions
+How to use the inverse, not any()?
+How any() evaluates values that aren't explicitly True or False?
+Any important difference between any() and or
+What short-circuting is?
+'''
+#%% 
+'''
+Basic
+=====
+++ It accepts one argument, an iterable.
+> a list []
+> a set {}
+> a dictionary {key:value}
+> a generator ()
+++ Returns one boolean value, True or False
+
+'''
+x = True
+y = True
+z = False
+
+# Let's run the code now
+if x is True or y is True or z is True :
+  print("One of the elements was True")
+else:
+  print("All are false")
+
+#%% Let's see how to use any function now...
+
+x = True
+y = True
+z = False
+
+# Create different iterables... 
+myList = [x,y,z]
+# print(myList)
+
+mySet = {x,y,z}
+# print(mySet)
+
+myDict = {
+  'x':False,
+  'y':False,
+  'z':False
+  }
+# print(myDict)
+
+myGenerator = (x,y,z)
+# print(myGenerator)
+
+# using any() now...
+
+if any(myList):
+  print("One of the elements was True")
+else:
+  print("All are false")
+
+#%% We need to be careful when using dict
+
+# if any(myDict):
+# if any(myDict.keys()):
+if any(myDict.values()):
+  print("One of the elements was True")
+else:
+  print("All are false")
+
+#%% How would you check if any student is "True" here ?
+# long method
+
+students = [False,False,True,False]
+any_pass = False
+
+for student in students:
+  if student is True:
+    any_pass = True
+    break
+
+if any_pass is True:
+  print("There is at least one student who passed")
+
+#%% Short any function
+
+if any(students) is True:
+# if any(students):
+  print("There is at least one student who passed")

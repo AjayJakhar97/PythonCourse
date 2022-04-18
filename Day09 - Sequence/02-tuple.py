@@ -6,7 +6,7 @@
 # A tuple is a collection which is ordered and unchangeable.
 # Tuples are written with round brackets
 
-#%% Create a Tuple:
+# %% Create a Tuple:
 
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
@@ -15,22 +15,24 @@ thistuple = ("apple")
 print(thistuple)
 
 
-#%% Create Tuple With One Item
+# %% Create Tuple With One Item
 # To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
 
 thistuple = ("apple",)
 print(type(thistuple))
 
-#NOT a tuple
+# NOT a tuple
 thistuple = ("apple")
 print(type(thistuple))
 
-#%% It is also possible to use the tuple() constructor to make a tuple.
-thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+# %% It is also possible to use the tuple() constructor to make a tuple.
+# note the double round-brackets
+thistuple = tuple(("apple", "banana", "cherry"))
 print(thistuple)
 print(type(thistuple))
+myTuple = tuple("apple")
 
-#%% Below code shows tuple are immutable ( or unchangeable) as the ID means object is changed if we change it
+# %% Below code shows tuple are immutable ( or unchangeable) as the ID means object is changed if we change it
 list_data = ['an', 'example', 'of', 'a', 'list']
 tuple_data = ('this', 'is', 'an', 'example', 'of', 'tuple')
 
@@ -40,7 +42,7 @@ print(id(tuple_data))
 
 # Adding elements to list and tuple
 list_data += ['Headset']
-tuple_data += ('Keyboard','mouse')
+tuple_data += ('Keyboard', 'mouse')
 
 # print them
 print(list_data)
@@ -50,18 +52,18 @@ print(tuple_data)
 print(id(list_data))
 print(id(tuple_data))
 
-#%% compare data of list or tuple
+# %% compare data of list or tuple
 
-list_data1 = [1,2,33,5,2]
-list_data2 = [1,2,33,5,2]
+list_data1 = [1, 2, 33, 5, 2]
+list_data2 = [1, 2, 33, 5, 2]
 
 print(list_data1 is list_data2)
 print(list_data1 == list_data2)
 
-#%% You can't compare list with tuple
+# %% You can't compare list with tuple
 
-list_data1 = [1,2,33,5,2]
-tuple_data = (1,2,33,5,2)
+list_data1 = [1, 2, 33, 5, 2]
+tuple_data = (1, 2, 33, 5, 2)
 print(list_data1 == tuple_data)
 
 # %% You can use len to count the number of elements
@@ -72,7 +74,7 @@ count = len(studentList)
 
 print(f"Total elements : {count}")
 
-#%% even this will create a tuple 
+# %% even this will create a tuple
 studentList = "Ram", "Gita", "Chris"
 
 print(studentList)
@@ -80,7 +82,7 @@ print(studentList)
 count = len(studentList)
 print(f"Total elements : {count}")
 
-#%% but we shouldn't do this. try 
+# %% but we shouldn't do this. try
 
 studentList1 = "Ram"
 print(studentList1)
@@ -89,7 +91,7 @@ count = len(studentList1)
 print(f"Total elements : {count}")
 
 
-#%% or this...
+# %% or this...
 studentList2 = ("Ram")
 print(studentList2)
 print(type(studentList2))
@@ -97,13 +99,13 @@ print(type(studentList2))
 count = len(studentList2)
 print(f"Total elements : {count}")
 
-#%% What if have to get one element out of this for example just "Ram" as one?
+# %% What if have to get one element out of this for example just "Ram" as one?
 studentList = ["Ram"]
 print(type(studentList))
 count = len(studentList)
 print(count)
 
-#%% Change Tuple Values
+# %% Change Tuple Values
 # Convert the tuple into a list to be able to change it:
 
 x = ("apple", "banana", "cherry")
@@ -122,7 +124,7 @@ thistuple += y
 
 print(thistuple)
 
-# %% Remove Items 
+# %% Remove Items
 # (Workaround) : Convert the tuple into a list, remove "apple", and convert it back into a tuple:
 
 thistuple = ("apple", "banana", "cherry")
@@ -135,7 +137,7 @@ thistuple = tuple(y)
 
 thistuple = ("apple", "banana", "cherry")
 del thistuple
-print(thistuple) #this will raise an error because the tuple no longer exists
+print(thistuple)  # this will raise an error because the tuple no longer exists
 
 # %% Packing a tuple:
 fruits = ("apple", "banana", "cherry")
@@ -175,7 +177,7 @@ print(red)
 
 # %% Join two tuples:
 
-tuple1 = ("a", "b" , "c")
+tuple1 = ("a", "b", "c")
 tuple2 = (1, 2, 3)
 
 tuple3 = tuple1 + tuple2
@@ -189,4 +191,12 @@ fruits = ("apple", "banana", "cherry")
 mytuple = fruits * 2
 
 print(mytuple)
-# %%
+# %% Quiz: What will be result of below ? Why?
+
+True, True, True == (True, True, True)
+
+# %% which is efficient to create.. list or tuple?
+import timeit
+
+print(timeit.timeit(stmt='["apple", "banana", "cherry"]', number=1000))
+print(timeit.timeit(stmt='("apple", "banana", "cherry")', number=1000))

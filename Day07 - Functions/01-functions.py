@@ -5,6 +5,9 @@ A function can return data as a result.
 '''
 
 # %% In-Built functions
+from ast import Not
+
+
 print()
 
 abs(-5)
@@ -107,6 +110,32 @@ def my_function(country = None):
 
 my_function()
 my_function("India")
+
+# %% What if you have bool? default parameter can be none
+
+def my_function(typeOfNumber = None):
+    if typeOfNumber == True:
+        return typeOfNumber
+    else:
+        return -1
+
+# 1st two give -1
+print(my_function(0))
+print(my_function())
+# Below is correct
+print(my_function(1))
+
+# %% How to fix it?
+
+def my_function(typeOfNumber = None):
+    if typeOfNumber is not None:
+        return typeOfNumber
+    else:
+        return -1
+
+print(my_function(0))
+print(my_function())
+print(my_function(1))
 
 # %% The pass Statement
 # function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.

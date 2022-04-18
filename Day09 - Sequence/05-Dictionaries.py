@@ -67,6 +67,7 @@ if 2022 in thisdict.values():
   print("yes, it exists")
 else:
   print("Nope, it doesn't exist")
+
 # %% Update Dictionary
 # The update() method will update the dictionary with the items from the given argument.
 # The argument must be a dictionary, or an iterable object with key:value pairs.
@@ -76,14 +77,17 @@ thisdict = {
   "model": "Mustang",
   "year": 1964
 }
+
 thisdict.update({"year": 2020})
 
 print(thisdict)
+
 # %% Removing items
 # The pop() method removes the item with the specified key name:
 
 thisdict.pop("brand")
 print(thisdict)
+
 # %%
 print(thisdict)
 # %% The popitem() method removes the last inserted item
@@ -250,4 +254,16 @@ print(removeDuplicateItems(myList01))
 myList02 = ["Apple","Banana","Apple","Cherry"]
 print(removeDuplicateItems(myList02))
 
-# %%
+# %% How to merge dictionaries ?
+
+dictA = {"a": 1,"b": "something"}
+dictB = {"name": "John","class": "medium"}
+dictC = dictA | dictB
+print(dictC)
+
+#%% Task: How to get unique ordered list?
+
+list1 = ["Hey","How","are","Hey","you","?","?"]
+list2 = list(dict.fromkeys(list1))
+print(list2)
+

@@ -13,7 +13,6 @@ def Tip():
 
 Tip()
 
-
 #%% Function processes result on the first return it finds and exits the call
 
 def CheckOddOrEven(num):
@@ -33,6 +32,7 @@ def my_function(x):
 print(my_function(3))
 print(my_function(5))
 print(my_function(9))
+
 # %% Recursion
 # Python also accepts function recursion, which means a defined function can call itself.
 
@@ -60,6 +60,7 @@ def recursion(x):
 print(recursion(1))
 
 #%% How to fix it now?
+# avoid using while loop
 
 def recursion(x):
     if x <= 10:
@@ -91,9 +92,14 @@ def print():
 
 print()
 
-#%% Task - Calculate Total Bill with 5% tip using return statement to get tip value
+#%% Task01 - Calculate Total Bill with 5% tip using return statement to get tip value
+#%% How to calculate percentage of a number
+number = 50
+print(5/100*number)
 
-def Tip(tip):
+#%% Solution: 
+
+def Tip(tip=5):
     return tip
 
 def TotalBill(Expense,tipvar=5):
@@ -102,7 +108,7 @@ def TotalBill(Expense,tipvar=5):
 
 TotalBill(100,10)
 
-#%% Task01- Make use of return and print numbers from 1 to 10
+#%% Task02- Make use of return and print numbers from 1 to 10
 
 def table(start = 1):
     if start <= 10:
@@ -115,7 +121,7 @@ def table(start = 1):
 table()
 print("ended.......")
 
-#%% Task02- Make use of return and print table of 5: 
+#%% Task03- Make use of return and print table of 5: 
 
 def table(myNumber, start = 1):
     if start <= 10:
@@ -150,7 +156,6 @@ print("ended.......")
 
 # %% Task01 - What do you think the result will be for the below?
 
-someNumber = 5
 
 def table(someNumber,start = 1):
     if start <= 10:
@@ -161,6 +166,7 @@ def table(someNumber,start = 1):
     return result
 
 
+someNumber = 5
 table(someNumber,4)
 
 print("ended.......")
@@ -183,3 +189,8 @@ def myAbs(number):
 print(myAbs(5))
 print(myAbs(-5))
 print(myAbs(0))
+
+
+
+
+# %%

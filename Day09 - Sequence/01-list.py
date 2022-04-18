@@ -497,17 +497,24 @@ print(result)
 
 # https://wiki.python.org/moin/HowTo/Sorting/
 
+
 # %% Copy a List using copy() function of list
 
 thislist = ["apple", "banana", "cherry"]
 mylist = thislist.copy()
+# mylist = list(thislist)
+# mylist = thislist[:]
+mylist.append("Grapes")
+
 print(mylist)
+print(thislist)
 
 
 # %% Let's test now
 thislist.append("grapes")
 print(thislist)
 print(mylist)
+
 # %%  You cannot copy a list simply by typing list2 = list1, because: list2 will only be a reference to list1, and changes made in list1 will automatically also be made in list2.
 
 thislist = ["apple", "banana", "cherry"]
@@ -570,6 +577,19 @@ x = list1.count("a")
 print(x)
 
 # %%
+
+list1 = ["apple", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana","apple","apple","apple","apple","apple","apple", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana","apple","apple","apple", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana","apple",]
+
+countApple = list1.count("apple")
+countBanana = list1.count("banana")
+
+print(countApple)
+print(countBanana)
+
+# %% you can create a list with exact same items like this
+
+list01 = [5] *3
+print(list01)
 
 #%% Two Sum
 
@@ -673,4 +693,22 @@ nums = [3, 4, 0, 1, 2, 1]
 target = 6
 result = twoSum(nums, target)
 print(result)
-# %%
+# %% What should be the total length here? 4 or 5?
+
+a = [
+    "One",
+    "Two"
+    "Three",
+    "Four",
+    "Five"
+]
+
+print(len(a))
+
+#%% get size of data
+
+import sys
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+print(sys.getsizeof(fruits), " bytes")
+

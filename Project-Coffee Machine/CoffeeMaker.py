@@ -12,6 +12,7 @@ Coffee beans : 8 gm
 Sugar : 50 gm
 '''
 
+'''
 # set the quantity of resources for each cup of a coffee and reduce it everytime you make a cup of a coffee
 # if you fall short of resources, you report it
 
@@ -33,9 +34,8 @@ def makeCoffee():
 
 makeCoffee()
 
-'''
 Solution
 '''
-from Functions import *
 
+from Functions import *
 WelcomeScreen()
