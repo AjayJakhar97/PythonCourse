@@ -42,4 +42,3 @@ print(mydoubler(11))
 mytripler  = myfunc(3)
 print(mytripler(11))
 
-# %%

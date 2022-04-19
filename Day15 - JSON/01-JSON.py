@@ -1,5 +1,5 @@
 '''
-JSON in Python
+JSON (JavaScript object notation) in Python
 ===============
 ++ JSON is a syntax for storing and exchanging data.
 ++ JSON is text, written with JavaScript object notation.
@@ -101,3 +101,47 @@ json.dumps(x, indent=4, separators=(". ", " = "))
 
 json.dumps(x, indent=4, sort_keys=True)
 # %%
+
+'''
+Check Your Understanding
+'''
+#%% Task: How to convert a txt string with \n to a dictionary ?
+
+import json
+a_string = '\n\n\n{\n "resultCount":25,\n "results": [\n{"wrapperType":"track", "kind":"podcast", "collectionId":10892}]}'
+print(a_string)
+d = json.loads(a_string)
+print("------")
+print(type(d))
+print(d.keys())
+print(d['resultCount'])
+# print(a_string['resultCount'])
+
+#%%  Task: Write a function that uses json.dumps to make a human-readable printout of a nested data structure.
+
+import json
+def pretty(obj):
+    return json.dumps(obj, sort_keys=True, indent=2)
+
+d = {'key1': {'c': True, 'a': 90, '5': 50}, 'key2':{'b': 3, 'c': "yes"}}
+
+print(d)
+print('--------')
+print(pretty(d))
+
+#%% Task: Say we had a JSON string in the following format. How would you convert it so that it is a python list?
+
+entertainment = """[{"Library Data": {"count": 3500, "rows": 10, "locations": 3}}, {"Movie Theater Data": {"count": 8, "rows": 25, "locations": 2}}]"""
+
+# entertainment.json()
+# json.dumps(entertainment)
+# json.loads(entertainment)
+
+#%% Task: Because we can only write strings into a file, if we wanted to convert a dictionary d into a json-formatted string so that we could store it in a file, what would we use?
+
+'''
+A. json.loads(d)
+B. json.dumps(d)
+C. d.json()
+
+'''

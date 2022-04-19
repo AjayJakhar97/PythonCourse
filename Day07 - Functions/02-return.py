@@ -39,7 +39,7 @@ print(my_function(9))
 def my_recursion_func(k):
     if k > 0:
         result = k + my_recursion_func(k-1)
-        # print(result)
+        print(result)
     else:
         result = 0
     return result

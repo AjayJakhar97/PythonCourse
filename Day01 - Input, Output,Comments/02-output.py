@@ -93,6 +93,13 @@ print("Python", end='@')
 print("KidBit",end='.')
 print("com")
 
+
+#%% sep puts the seperator in between the strings
+myVar = "Hello"
+print("Starting...",myVar)
+# print("Starting...",myVar,sep="")
+
+
 # Cover variables and then come back here...
 
 #

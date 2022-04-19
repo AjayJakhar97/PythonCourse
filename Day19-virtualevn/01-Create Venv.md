@@ -10,6 +10,13 @@ PS C:\VSCode\Dev>
 
 # Check if you have by running "pip show virtualenv" installed
 
+## Method 1
+==========
+C:\VSCode\Dev>python -m virtualenv --version  
+virtualenv 20.14.1 from C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\site-packages\virtualenv\__init__.py
+
+## Method 2
+==========
 PS C:\VSCode\Dev> pip show virtualenv
 Name: virtualenv
 Version: 20.14.1
@@ -126,6 +133,28 @@ C:\VSCode\Dev>dir
                4 Dir(s)  326,372,810,752 bytes free
 
 # Again make sure you are using "cmd" terminal now and let's activate one of those environments
+    ## Sidenote: You can run in powershell but you may face issues like below
+    # if you are in powershell terminal, you need to do below
+    Get-ExecutionPolicy
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+    .\myEnv1\Scripts\activate.ps1
+
+    ## Below is an example
+    PS C:\VSCode\Dev> .\myEnv1\Scripts\activate.ps1    
+    .\myEnv1\Scripts\activate.ps1 : File C:\VSCode\Dev\myEnv1\Scripts\activate.ps1 cannot be loaded because running scripts is disabled on this 
+    system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+    At line:1 char:1
+    + .\myEnv1\Scripts\activate.ps1
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+        + FullyQualifiedErrorId : UnauthorizedAccess
+    PS C:\VSCode\Dev> Get-ExecutionPolicy                              
+    Restricted
+    PS C:\VSCode\Dev> Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+    PS C:\VSCode\Dev> .\myEnv1\Scripts\activate.ps1
+    (myEnv1) PS C:\VSCode\Dev> 
+
+# okay...back to cmd
 
 C:\VSCode\Dev>myEnv1\Scripts\activate.bat
 

@@ -45,11 +45,71 @@ list5 = [list1,list2,list3,list4]
 for item in list5:
     print(item)
 
+# ==================== 
+# Nested Iteration
+# ==================== 
+
 #%% How to call all the items in the lists
 list5 = [list1,list2,list3,list4]
 for item1 in list5:
     for item in item1:
         print(item)
+
+#%%
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+for x in nested1:
+    print("level1: ")
+    for y in x:
+        print("     level2: " + y)
+
+#%% Task : Below, we have provided a list of lists that contain information about people. Write code to create a new list that contains every person’s last name, and save that list as last_names.
+
+info = [['Tina', 'Turner', 1939, 'singer'], ['Matt', 'Damon', 1970, 'actor'], ['Kristen', 'Wiig', 1973, 'comedian'], ['Michael', 'Phelps', 1985, 'swimmer'], ['Barack', 'Obama', 1961, 'president']]
+
+last_names = []
+for item in info:
+    last_names.append(item[1])
+print(last_names)
+
+#%% Task : Below, we have provided a list of lists named L. Use nested iteration to save every string containing “b” into a new list named b_strings.
+
+L = [['apples', 'bananas', 'oranges', 'blueberries', 'lemons'], ['carrots', 'peas', 'cucumbers', 'green beans'], ['root beer', 'smoothies', 'cranberry juice']]
+
+b_strings = []
+
+# Method 1
+# =============
+
+# for list in L:
+#     for word in list:
+#         if 'b' in word:
+#             b_strings.append(word)
+# print(b_strings)
+
+# Method 2
+# =============
+
+for myList in L:
+    for word in myList:
+        for character in word:
+            if character == 'b':
+                b_strings.append(word)
+                break
+print(b_strings)
+
+
+#%% let’s reconsider this nested iteration, but suppose not all the items in the outer list are lists
+# Now the nested iteration fails.
+# We can solve this with special casing, a conditional that checks the type.
+
+nested1 = [1, 2, ['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+for x in nested1:
+    print("level1: ")
+    if type(x) is list:
+        for y in x:
+            print("     level2: {}".format(y))
+    else:
+        print(x)
 
 #%% Lists allow duplicate values
 thislist = ["apple", "banana", "cherry", "apple", "cherry"]
@@ -121,6 +181,64 @@ myList = ["a", "b", "c", "d", "e", "f"]
 #%% running this statement will return True
 "r" not in myList
 
+
+#%% Nested Data and Nested Iteration
+
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+print(nested1[0])
+print(len(nested1))
+nested1.append(['i'])
+print("-------")
+for L in nested1:
+    print(L)
+
+#%%
+
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+y = nested1[1]
+print(y)
+print(y[0])
+
+print([10, 20, 30][1])
+print(nested1[1][0])
+
+#%% Exercise: How to access the functions in list and run them ?
+
+def square(x):
+    return x*x
+
+L = [square, abs, lambda x: x+1]
+
+print("****names****")
+for f in L:
+    print(f)
+
+print("****call each of them****")
+for f in L:
+    print(f(-2))
+
+print("****just the first one in the list****")
+print(L[0])
+print(L[0](3))
+
+
+#%% Task - Below, we have provided a list of lists. Use indexing to assign the element ‘horse’ to the variable name idx1
+
+
+animals = [['cat', 'dog', 'mouse'], ['horse', 'cow', 'goat'], ['cheetah', 'giraffe', 'rhino']]
+
+idx1 = animals[1][0]
+print(idx1)
+
+#%% Task - Using indexing, retrieve the string ‘willow’ from the list and assign that to the variable plant.
+
+data = ['bagel', 'cream cheese', 'breakfast', 'grits', 'eggs', 'bacon', [34, 9, 73, []], [['willow', 'birch', 'elm'], 'apple', 'peach', 'cherry']]
+
+plant = data[7][0][0]
+print(plant)
+
+
+#%%
 # List - How to change items
 # =====================
 
@@ -500,20 +618,77 @@ print(result)
 
 # %% Copy a List using copy() function of list
 
-thislist = ["apple", "banana", "cherry"]
-mylist = thislist.copy()
-# mylist = list(thislist)
-# mylist = thislist[:]
-mylist.append("Grapes")
+original = ["apple", "banana", "cherry"]
+copied_version = original[:]
+print(original)
+# copied_version = original.copy()
+# copied_version = list(original)
 
-print(mylist)
-print(thislist)
+# Let's test now
+original.append("grapes")
+print(original)
+print(copied_version)
 
+#%% Deep and Shallow Copies
+# shallow copies (copying a list at the highest level)
+# Deep copies (copying a list at the nested level) 
+'''
+When you copy a nested list, you do not also get copies of the internal lists. This means that if you perform a mutation operation on one of the original sublists, the copied version will also change. We can see this happen in the following nested list, which only has two levels.
+'''
 
-# %% Let's test now
-thislist.append("grapes")
-print(thislist)
-print(mylist)
+original = [['dogs', 'puppies'], ['cats', "kittens"]]
+copied_version = original[:]
+print(copied_version)
+print(copied_version is original)
+print(copied_version == original)
+original[0].append(["canines"])
+print(original)
+print("-------- Now look at the copied version -----------")
+print(copied_version)
+
+#%% Solution -1
+
+original = [['dogs', 'puppies'], ['cats', "kittens"]]
+copied_outer_list = []
+for inner_list in original:
+    copied_inner_list = []
+    for item in inner_list:
+        copied_inner_list.append(item)
+    copied_outer_list.append(copied_inner_list)
+print(copied_outer_list)
+original[0].append(["canines"])
+print(original)
+print("-------- Now look at the copied version -----------")
+print(copied_outer_list)
+
+#%% Solution -2
+
+original = [['dogs', 'puppies'], ['cats', "kittens"]]
+copied_outer_list = []
+for inner_list in original:
+    copied_inner_list = inner_list[:]
+    copied_outer_list.append(copied_inner_list)
+print(copied_outer_list)
+original[0].append(["canines"])
+print(original)
+print("-------- Now look at the copied version -----------")
+print(copied_outer_list)
+
+#%% This process above works fine when there are only two layers or levels in a nested list. However, if we want to make a copy of a nested list that has more than two levels, then we recommend using the copy module. In the copy module there is a method called deepcopy that will take care of the operation for you.
+
+import copy
+original = [['canines', ['dogs', 'puppies']], ['felines', ['cats', 'kittens']]]
+shallow_copy_version = original[:]
+deeply_copied_version = copy.deepcopy(original)
+original.append("Hi there")
+original[0].append(["marsupials"])
+print("-------- Original -----------")
+print(original)
+print("-------- deep copy -----------")
+print(deeply_copied_version)
+print("-------- shallow copy -----------")
+print(shallow_copy_version)
+
 
 # %%  You cannot copy a list simply by typing list2 = list1, because: list2 will only be a reference to list1, and changes made in list1 will automatically also be made in list2.
 
