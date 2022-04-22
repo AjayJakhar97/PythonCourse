@@ -16,10 +16,10 @@ Operator	Description	Syntax
 txt = "The binary version of {0} is {0:b}"
 print(txt.format(6))
 
-#%% Convert int 40 to binary
+#%% Convert int 6 to binary
 print(format(6, "b"))
 
-#%% Convert binary 1110 to an int 
+#%% Convert binary 0110 to an int 
 print(int('0110',2))
 
 #%% Let's have a look at binary numbers and try to see a pattern
@@ -74,10 +74,19 @@ print(a | b)
 print(format(14, "b"))
 
 #%% Print bitwise NOT operation
+
 # ~   NOT : Inverts all the bits
 print(format(5, "b"))
 x = 5  # 101 in binary
-x = ~x # -x-1 = -(101 + 001) = -(110) = -6
+x = ~x 
+
+# Numerically:
+# -x-1 = -(5 + 1) = -(6) = -6
+
+# Bitwise:
+# x & 1 = 101 & 001 = 001 
+# now invert the bits from 001 to 110 and because we have inverted put - for storing sign bit
+# -6
 
 '''
 101
@@ -90,7 +99,6 @@ x = ~x # -x-1 = -(101 + 001) = -(110) = -6
 opposite (Inverts or One's complement ) of 001 is 110
 
 '''
-
 print(x)
 print(int('110',2))
 
