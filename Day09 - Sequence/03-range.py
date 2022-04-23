@@ -105,21 +105,44 @@ print(list(myVar1[3:5]))
 The advantage of the range type over a regular list or tuple is that a range object will always take the same (small) amount of memory, no matter the size of the range it represents (as it only stores the start, stop and step values, calculating individual items and subranges as needed).
 '''
 
-#%% Exercise - 
+# %% Exercise - 
+'''
+Write a program that prints the numbers from 1 to 100 and...
 
-# Python program to print Fizz Buzz
- 
+1- for multiples of ‘3’ print “Fizz” instead of the number and 
+2- for the multiples of ‘5’ print “Buzz” and
+3- for multiples of '3' and '5' print 'FizzBuzz'
+
+For example: Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+
+'''
 # Loop for 100 times i.e. range
 for item in range(1,101):
     # Number divisible by 15,(divisible by both 3 & 5)
     if item % 15 == 0:
-        print(item, "FizzBuzz")
+        print("FizzBuzz")
     # Number divisible by 3
     elif item % 3 == 0:
-        print(item, "Fizz")
+        print("Fizz")
     # Number divisible by 5
     elif item % 5 == 0:
-        print(item, "Buzz")
+        print("Buzz")
     else:
         print(item)
 

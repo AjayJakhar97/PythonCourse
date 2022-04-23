@@ -221,7 +221,6 @@ print("****just the first one in the list****")
 print(L[0])
 print(L[0](3))
 
-
 #%% Task - Below, we have provided a list of lists. Use indexing to assign the element ‘horse’ to the variable name idx1
 
 
@@ -269,7 +268,6 @@ thislist = ["apple", "banana", "cherry"]
 tropical = ["mango", "pineapple", "papaya"]
 thislist.extend(tropical)
 print(thislist)
-
 
 #%%
 # Note
