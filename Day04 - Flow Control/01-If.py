@@ -65,11 +65,7 @@ b = 200
 print("A") if a > b else print("B")
 
 #%% You can also have multiple else statements on the same line:
-'''
-1- start from right
-2- If TRUE:
 
-'''
 a = 0
 b = 330
 print("A") if a > b else print("=") if a == b else print("B")
@@ -83,13 +79,13 @@ b = 0
 print("A") if a > b else print("=") if a == b else print("B")
 # Breakdown of the solution
 print("A") if a > b else print("=") # You get --> print("A") 
-print("A") if a > b else print("=") if a == b else print("B")
+print("A") if a == b else print("B")
 
 a = 330
 b = 330
 print("A") if a > b else print("=") if a == b else print("B")
 # Breakdown of the solution
-print("A") if a > b else print("=") if a == b else print("B") # You get --> print("=")
+print("A") if a > b else print("=") # You get --> print("=")
 print("=") if a == b else print("B")
 
 #%% The and keyword is a logical operator, and is used to combine conditional statements
