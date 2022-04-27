@@ -221,3 +221,6 @@ if any([True for item in WiFi.values() if item == 'Open']):
     print("Found an open WiFi")
 else:
     print('No open WiFi')
+
+#%% How to Use Python's any() Function to Check for Letters in a String
+

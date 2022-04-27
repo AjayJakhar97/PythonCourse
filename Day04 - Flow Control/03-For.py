@@ -125,3 +125,31 @@ def myFunction():
 
 myFunction()
 
+#%% Assignment : Count how many times a number comes again
+'''
+input = 1,2,4,5,4,3,2,6,4,0,1
+
+output : 
+1: 2
+2: 2
+3: 1
+4: 3
+5: 1
+6: 1 
+'''
+
+input = [1,2,4,5,4,3,2,6,4,0,1]
+# input = [1,1,2,2,3]
+# input = [120,11,34,55,120,11]
+seen = 0
+for i in input:
+    if seen == i:
+        continue
+    count = 0
+    for j in input:
+        if i == j:
+            count += 1
+            seen = i
+        else:
+            continue
+    print(f"{i} : {count} times")

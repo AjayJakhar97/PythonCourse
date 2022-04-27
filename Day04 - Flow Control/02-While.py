@@ -7,6 +7,20 @@ while i < 6:
   print(i)
   i += 1
 
+#%% Write a program to print even numbers up to and including 10 and skip even numbers
+# variable should between 0 and 20
+
+i = 0
+while i < 20:
+  i += 1
+  if i%2 == 0:
+    print(i)
+  elif i > 10:
+    break
+  else:
+    continue
+
+
 
 #%% Below code will keep running infinitely. So press "Ctrl + c" to stop it
 i = 1
@@ -72,51 +86,26 @@ print(3%3)
 # Assignments
 # =================
 
-#%% Count how many times a number comes again
-'''
-input = 1,2,4,5,4,3,2,6,4,0,1
 
-output : 
-1: 2
-2: 2
-3: 1
-4: 3
-5: 1
-6: 1 
-'''
-
-input = [1,1,2,2,3]
-# input = [120,11,34,55,120,11]
-
-for i in input:
-    if seen == i:
-        continue
-    count = 0
-    for j in input:
-        if i == j:
-            count +=1
-            seen = i
-        else:
-            continue
-    print(f"{i} : {count} times")
-
-#%% Take the input and print that Fibonacci number
+#%% Take the input and print Fibonacci series up to that number
 
 '''
 Fibonacci number: 0,1,1,2,3,5,8,13,...
 '''
 myNumber = int(input("Which Fibonacci number do you want to print? : "))
 a = 0
+print(a,end=" ")
 b = 1
+print(b,end=" ")
 count = 2
+
 if myNumber >= 2:
   while count <= myNumber:
     c = a + b
     a = b
     b = c
+    print(c,end=" ")
     count += 1
-  print(c)
-
 
 # %% Exercise - 
 '''
