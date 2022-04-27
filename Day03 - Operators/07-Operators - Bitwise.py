@@ -22,6 +22,11 @@ print(format(6, "b"))
 #%% Convert binary 0110 to an int 
 print(int('0110',2))
 
+#%% another way is 
+
+bin(10)
+int(0b1010)
+
 #%% Let's have a look at binary numbers and try to see a pattern
 
 for i in range(21):

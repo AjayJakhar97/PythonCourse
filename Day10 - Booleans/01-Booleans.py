@@ -9,7 +9,8 @@ print(10 < 9)
 a = 200
 b = 33
 
-if b > a:
+# if !True:
+if not True:
   print("b is greater than a")
 else:
   print("b is not greater than a")
@@ -154,13 +155,18 @@ else:
   print("All are false")
 
 #%% We need to be careful when using dict
-
+#%%
 # if any(myDict):
 # if any(myDict.keys()):
 if any(myDict.values()):
   print("One of the elements was True")
 else:
   print("All are false")
+
+#%% Note: When used on a dictionary, the any() function checks if any of the keys are true, not the values.
+mydict = {0 : "Apple", 1 : "Orange"}
+x = any(mydict)
+
 
 #%% How would you check if any student is "True" here ?
 # long method
@@ -181,3 +187,37 @@ if any_pass is True:
 if any(students) is True:
 # if any(students):
   print("There is at least one student who passed")
+
+# %% Task: Check if there is any open WiFi in your neighbourhood and return "Found an open WiFi" if there is any...
+
+WiFi = {
+'xBox' : 'Open',
+'iPhone' : 'Locked',
+'Arrow' : 'Locked',
+'SuperMan' : 'Locked'
+}
+
+def myFunction(myDict):
+    for item in WiFi.values():
+        if item == 'Open':
+            return True
+    return False
+
+if myFunction(WiFi) == True:
+    print("Found an open WiFi")
+else:
+    print('No open WiFi')
+
+#%% Short method
+
+WiFi = {
+'xBox' : 'Open',
+'iPhone' : 'Locked',
+'Arrow' : 'Locked',
+'SuperMan' : 'Locked'
+}
+
+if any([True for item in WiFi.values() if item == 'Open']):
+    print("Found an open WiFi")
+else:
+    print('No open WiFi')

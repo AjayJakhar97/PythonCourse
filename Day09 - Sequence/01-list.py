@@ -885,3 +885,8 @@ import sys
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 print(sys.getsizeof(fruits), " bytes")
 
+#%% Quiz: result of code ?
+
+list = [1 for i in [1,2,3]]
+print(3 in list)
+
