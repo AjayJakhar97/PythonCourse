@@ -52,4 +52,15 @@ import math
 
 x = math.pi
 print(x)
-# %%
+
+# %% Write you own abs function
+
+def myAbs(myNumber):
+    if myNumber < 0:
+        return -myNumber
+    else:
+        return myNumber
+
+print(myAbs(0))
+print(myAbs(-1))
+print(myAbs(1))
