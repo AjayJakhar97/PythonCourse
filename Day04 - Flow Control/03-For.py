@@ -25,7 +25,16 @@ for items in range(len(fruits)):
 for x in "banana":
   print(x)
 
-# You can use break statement for for loop as well
+#%%
+fruit = ['apple','cherry','mango','Grapes']
+
+for item1 in fruit:
+    print('=======')
+    for item2 in item1:
+        print(item2)
+
+
+#%% You can use break statement for for loop as well
 
 #%% Exit the loop when x is "banana":
 
