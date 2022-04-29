@@ -109,8 +109,13 @@ if myNumber >= 2:
 
 # %% Exercise - 
 '''
-Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:
-Write a program that prints the numbers from 1 to 100 and for multiples of ‘3’ print “Fizz” instead of the number and for the multiples of ‘5’ print “Buzz”
+Write a program that prints the numbers from 1 to 100 and...
+
+1- for multiples of ‘3’ print “Fizz” instead of the number and 
+2- for the multiples of ‘5’ print “Buzz” and
+3- for multiples of '3' and '5' print 'FizzBuzz'
+
+For example: Given a number , for each integer in the range from 1 to n inclusive, print one value per line as follows:
 
 1
 2
@@ -132,25 +137,19 @@ FizzBuzz
 
 #%% Solution
 
-def fizzBuzz(n):
-    # Write your code here
-    i = 1
-    while(i<n+1):
-        if (i%3 == 0) and (i%5 == 0):
-            print("FizzBuzz")
-        elif (i%3 == 0):
-            print("Fizz")
-        elif (i%5 == 0):
-            print("Buzz")
-        else:
-            print(i)
-        i += 1
-        
-        
-if __name__ == '__main__':
-    n = int(input().strip())
+n = 100
 
-    fizzBuzz(n)
+i = 1
+while(i<n+1):
+    if (i%3 == 0) and (i%5 == 0):
+        print("FizzBuzz")
+    elif (i%3 == 0):
+        print("Fizz")
+    elif (i%5 == 0):
+        print("Buzz")
+    else:
+        print(i)
+    i += 1
 
 # %%
 
