@@ -115,4 +115,113 @@ os.rmdir("myfolder")
 
 # Note: You can only remove empty folders.
 
+# %% rename a file
+# https://stackoverflow.com/questions/2491222/how-to-rename-a-file-using-python
+
+import os
+os.rename('a.txt', 'b.kml')
+
+#%% File may be inside a directory, in that case specify the path:
+
+import os
+
+directory = r'C:\Users\Administrator\Downloads\Class 7\English\HoneyComb'
+print(os.path.exists(directory))
+
+if os.path.exists(directory):
+
+    old_file = os.path.join("directory", "a.txt")
+    new_file = os.path.join("directory", "b.kml")
+    os.rename(old_file, new_file)
+
+    os.rename('a.txt', 'b.kml')
+
+else:
+    raise exception
+
+#%%
+
+'''
+If you used below then you will get an issue
+
+fileLocation = 'C:\Users\Administrator\Downloads\Class 7\English\HoneyComb'
+print(os.path.exists)
+
+  Input In [3]
+    fileLocation = f'C:\Users\Administrator\Downloads\Class 7\English\HoneyComb'
+                                                                                ^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+
+==============
+Explaination
+==============
+
+The problem is with the string
+
+"C:\Users\Eric\Desktop\beeline.txt"
+Here, \U in "C:\Users... starts an eight-character Unicode escape, such as \U00014321. In your code, the escape is followed by the character 's', which is invalid.
+
+You either need to duplicate all backslashes:
+
+"C:\\Users\\Eric\\Desktop\\beeline.txt"
+Or prefix the string with r (to produce a raw string):
+
+r"C:\Users\Eric\Desktop\beeline.txt"
+
+'''
+
+#%%  As of Python 3.4 one can use the pathlib module to solve this.
+
+
+some_path = 'a/b/c/the_file.extension'
+# So, you can take your path and create a Path object out of it:
+
+from pathlib import Path
+p = Path(some_path)
+
+#%%
+
+
+import os
+
+directory = r'C:\Users\Administrator\Downloads\Class 7\English\HoneyComb'
+print(os.path.exists(directory))
+
+if os.path.exists(directory):
+    os.walk(directory)
+
+#%%
+
+import os 
+from os.path import join, getsize 
+# for root, dirs, files in os.walk('python/Lib/email'):
+directory = r'C:\Users\Administrator\Downloads\Class 7\English\HoneyComb'
+
+for root, dirs, files in os.walk(directory):
+    print(root, "consumes", end="") 
+    print(sum(getsize(join(root, name)) for name in files), end="")
+    print("bytes in", len(files), "non-directory files")
+    if 'CVS' in dirs:
+        dirs.remove('CVS') # don't visit CVS directories
+    
+    for name in files:
+        print(name)
+
+#%% How to list directory tree structure in python?
+
+# You can use the os.walk() method to get the list of all children of path you want to display the tree of. Then you can join the paths and get the absolute path of each file.
+# For example
+
+import os
+def tree_printer(root):
+    for root, dirs, files in os.walk(root):
+        for d in dirs:
+            print(os.path.join(root, d)  )  
+        for f in files:
+            print(os.path.join(root, f))
+
+tree_printer('.')
+tree_printer(directory)
+
+
 # %%
