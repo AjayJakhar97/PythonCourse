@@ -200,3 +200,16 @@ import timeit
 
 print(timeit.timeit(stmt='["apple", "banana", "cherry"]', number=1000))
 print(timeit.timeit(stmt='("apple", "banana", "cherry")', number=1000))
+
+#%%
+x = "(1,2,3,4,5,6)"
+print(eval(x))
+
+
+#%%
+
+
+x = lambda x: x+1
+x(-2)
+
+# %%

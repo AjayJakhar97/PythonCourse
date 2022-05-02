@@ -181,7 +181,6 @@ myList = ["a", "b", "c", "d", "e", "f"]
 #%% running this statement will return True
 "r" not in myList
 
-
 #%% Nested Data and Nested Iteration
 
 nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
