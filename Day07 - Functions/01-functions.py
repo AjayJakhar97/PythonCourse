@@ -55,14 +55,12 @@ my_function("Sunil")
 # This way the function will receive a tuple of arguments, and can access the items accordingly:
 
 
-def my_function(*kids):
-    print("The youngest child is " + kids[0])
+def my_function(firstKid, *kids):
+    print(f"The youngest kid is {firstKid}")
+    print(f"The rest of the kids are {list[kids]}" )
 
 
-my_function("Olivia", "Emma", "Ava","Sunil")
 my_function("Olivia", "Emma", "Ava")
-my_function("Olivia")
-
 
 # %% Keyword Arguments:
 # You can also send arguments with the key = value syntax. This way the order of the arguments does not matter.
@@ -74,18 +72,49 @@ def my_function(child3, child2, child1):
 
 my_function(child1="Olivia", child2="Emma", child3="Ava")
 
-# Note: The phrase Keyword Arguments are often shortened to kwargs in Python documentations
-
 # %% Arbitrary Keyword Arguments, **kwargs
+# Note: The phrase Keyword Arguments are often shortened to kwargs in Python documentations
 # If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly
 
 
 def my_function(**kid):
     print("His last name is " + kid["lname"])
 
-
 my_function(fname="Sunil", lname="Kumar")
 
+#%% It is also possible to send functions arguments by keyword, so that the order of the argument does not matter, using the following syntax. 
+# The following code yields the following output: The sum is: 6 Result: 1
+
+def bar(first, second, third, **options):
+    if options.get("action") == "sum":
+        print("The sum is: %d" %(first + second + third))
+
+    if options.get("number") == "first":
+        return first
+
+result = bar(1, 2, 3, action = "sum", number = "first")
+print("Result: %d" %(result))
+
+#%% Exercise : Fill in the foo and bar functions so they can receive a variable amount of arguments (3 or more).
+# The foo function must return the amount of extra arguments received. 
+# The bar must return True if the argument with the keyword magicnumber is worth 7, and False otherwise.
+
+def foo(a, b, c, *args):
+    return len(args)
+
+def bar(a, b, c, **kwargs):
+    return kwargs["magicnumber"] == 7
+
+
+# test code
+if foo(1, 2, 3, 4) == 1:
+    print("Good.")
+if foo(1, 2, 3, 4, 5) == 2:
+    print("Better.")
+if bar(1, 2, 3, magicnumber=6) == False:
+    print("Great.")
+if bar(1, 2, 3, magicnumber=7) == True:
+    print("Awesome!")
 
 # %% default parameter: If we call the function without argument, it uses the default value
 
