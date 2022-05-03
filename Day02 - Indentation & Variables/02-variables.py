@@ -272,7 +272,7 @@ print("global x:", x)
 # %% Example 6: Create a nonlocal variable
 x = "Global"
 
-def outer():
+def outer(x):
     x = "local"
 
     def inner():
@@ -282,7 +282,7 @@ def outer():
     inner()
     print("outer:", x)
 
-outer()
+outer(x)
 print("Main:", x) 
 
 # %%
