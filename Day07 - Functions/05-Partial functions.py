@@ -11,7 +11,7 @@ Partial functions allow one to derive a function with x parameters to a function
 from functools import partial
 
 def multiply(x, y):
-        return x * y
+    return x * y
 
 # create a new function that multiplies by 2
 dbl = partial(multiply, 2) # x: 2
