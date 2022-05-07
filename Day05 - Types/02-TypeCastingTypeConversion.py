@@ -91,4 +91,3 @@ def multiply():
 #%% Let's run multiply()
 multiply()
 
-# %%

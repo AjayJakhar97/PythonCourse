@@ -14,7 +14,6 @@ print(thistuple)
 thistuple = ("apple")
 print(thistuple)
 
-
 # %% Create Tuple With One Item
 # To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
 
@@ -202,14 +201,6 @@ print(timeit.timeit(stmt='["apple", "banana", "cherry"]', number=1000))
 print(timeit.timeit(stmt='("apple", "banana", "cherry")', number=1000))
 
 #%%
-x = "(1,2,3,4,5,6)"
+x = "1,2,3,4,5,6"
 print(eval(x))
 
-
-#%%
-
-
-x = lambda x: x+1
-x(-2)
-
-# %%

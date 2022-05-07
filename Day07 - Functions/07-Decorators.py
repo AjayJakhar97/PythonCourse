@@ -224,6 +224,159 @@ say_whee()
 
 # So, @my_decorator is just an easier way of saying say_whee = my_decorator(say_whee). It’s how you apply a decorator to a function.
 
+#%% Reusing Decorators
+# decorator is just a regular Python function. All the usual tools for easy reusability are available. Let’s move the decorator to its own module that can be used in many other functions.
+
+# Create a file called decorators.py with the following content: 
+
+from decorators import do_twice
+
+@do_twice
+def say_whee():
+    print("Whee!")
+
+# original say_whee() is executed twice:
+say_whee()
+
+# Note: You can name your inner function whatever you want, and a generic name like wrapper() is usually okay.
+
+# %% Decorating Functions With Arguments. Say that you have a function that accepts some arguments. Can you still decorate it? Let’s try: 
+from decorators import do_twice
+
+@do_twice
+def greet(name):
+    print(f"Hello {name}")
+
+# Below will give the error msg
+greet("World")
+
+#%%
+'''
+The problem is that the inner function wrapper_do_twice() does not take any arguments, but name="World" was passed to it. You could fix this by letting wrapper_do_twice() accept one argument, but then it would not work for the say_whee() function you created earlier.
+
+The solution is to use *args and **kwargs in the inner wrapper function. Then it will accept an arbitrary number of positional and keyword arguments. Rewrite decorators.py as follows:
+'''
+# %% Returning Values From Decorated Functions : 
+
+from decorators import do_twice
+
+@do_twice
+def return_greeting(name):
+    print("Creating greeting")
+    return f"Hi {name}" 
+
+hi_adam = return_greeting("Adam")
+print(hi_adam) # Oops, the decorator ate the return value from the function
+# Because the do_twice_wrapper() doesn’t explicitly return a value, the call return_greeting("Adam") ended up returning None.
+
+# To fix this, you need to make sure the wrapper function returns the return value of the decorated function. Change your decorators.py file:
+
+# %% Let's run introspection for functions:
+
+help(say_whee)
+
+# However, after being decorated, say_whee() has gotten very confused about its identity. It now reports being the wrapper_do_twice() inner function inside the do_twice() decorator. Although technically true, this is not very useful information.
+
+# To fix this, decorators should use the @functools.wraps decorator, which will preserve information about the original function. Update decorators.py again and now say_whee() is still itself after decoration
+
+# %% So, This formula is a good boilerplate template for building more complex decorators
+
+import functools
+
+def decorator(func):
+    @functools.wraps(func)
+    def wrapper_decorator(*args, **kwargs):
+        # Do something before
+        value = func(*args, **kwargs)
+        # Do something after
+        return value
+    return wrapper_decorator
+
+#%% Timing Functions
+# Let’s start by creating a @timer decorator. It will measure the time a function takes to execute and print the duration to the console. Here’s the code:
+
+import functools
+import time
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        #  time.perf_counter() function does a good job of measuring time intervals
+        start_time = time.perf_counter()    # 1 : storing the time just before the function starts running
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()      # 2 : and just after the function finishes
+        run_time = end_time - start_time    # 3 : Calculate the time the function takes
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+    return wrapper_timer
+
+@timer
+def waste_some_time(num_times):
+    for _ in range(num_times):
+        sum([i**2 for i in range(10000)])
+
+# Testing code
+waste_some_time(1)
+waste_some_time(2)
+
+# Side note: The @timer decorator is great if you just want to get an idea about the runtime of your functions. If you want to do more precise measurements of code, you should instead consider the timeit module in the standard library. It temporarily disables garbage collection and runs multiple trials to strip out noise from quick function calls.
+
+#%% Debugging Code
+# The following @debug decorator will print the arguments a function is called with as well as its return value every time the function is called: 
+import functools
+
+def debug(func):
+    """Print the function signature and return value"""
+    @functools.wraps(func)
+    def wrapper_debug(*args, **kwargs):
+        args_repr = [repr(a) for a in args]                      # 1
+        print(args_repr)
+        kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]  # 2
+        signature = ", ".join(args_repr + kwargs_repr)           # 3
+        print(f"Calling {func.__name__}({signature})")
+        value = func(*args, **kwargs)
+        print(f"{func.__name__!r} returned {value!r}")           # 4
+        return value
+    return wrapper_debug
+
+@debug
+def waste_some_time(num_times):
+    for _ in range(num_times):
+        return sum([i**2 for i in range(10000)])
+
+# Testing code
+waste_some_time(1,13)
+
+
+
+#%%
+args = 1,13
+[repr(a) for a in args]
+[str(a) for a in args]
+# [a for a in args]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #%% A decorator is just another function which takes a functions and returns one. For example you could do this:
 def repeater(multiply):

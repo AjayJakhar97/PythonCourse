@@ -1,4 +1,4 @@
-# Tuple (Introduction)
+# Dictionary (Introduction)
 # ================================
 
 # Dictionary is used to store multiple items in a single variable.

@@ -21,3 +21,5 @@ def myFunction(myMessage=None):
 #%% You can call the function like below
 myFunction(55+555)
 
+# docstring and help() e.g. 
+help(myFunction)

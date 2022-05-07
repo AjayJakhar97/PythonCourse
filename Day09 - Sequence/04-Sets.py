@@ -46,11 +46,15 @@ for x in thisset:
 #%% or ask if a specified value is present in a set, by using the in keyword.
 thisset = {"apple", "banana", "cherry"}
 print("banana" in thisset)
+print("orange" in thisset)
 
 # %% Add an item to a set, using the add() method
 thisset = {"apple", "banana", "cherry"}
+print(id(thisset))
 thisset.add("orange")
 print(thisset)
+print(id(thisset))
+
 
 # %% Add Sets or any other iterable
 thisset = {"apple", "banana", "cherry"}
@@ -123,9 +127,13 @@ print(set1)
 
 #%% Keep ONLY the Duplicates
 x = {"apple", "banana", "cherry"}
+print(x)
+
 y = {"google", "microsoft", "apple"}
+print(y)
 
 x.intersection_update(y)
+# x = x.intersection(y)
 
 print(x)
 
