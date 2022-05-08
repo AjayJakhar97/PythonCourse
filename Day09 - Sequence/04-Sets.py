@@ -163,3 +163,38 @@ z = x.symmetric_difference(y)
 
 print(z)
 
+#%% Write a Python program to add member(s) in a set.
+
+#A new empty set
+color_set = set()
+print(color_set)
+print("\nAdd single element:")
+color_set.add("Red")
+print(color_set)
+print("\nAdd multiple items:")
+color_set.update(["Blue", "Green"])
+print(color_set)
+
+#%% Write a Python program to check if two given sets have no elements in common.
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft","apple"}
+
+z = x.intersection(y)
+if z:
+  print(z)
+else:
+  print('No common elements found')
+
+
+#%% isdisjoint() method
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.isdisjoint(y)
+
+if z:
+  print('No common elements found')
+else:
+  print('There is at least one command element')
+
