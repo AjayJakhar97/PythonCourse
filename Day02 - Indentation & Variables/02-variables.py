@@ -21,6 +21,16 @@ a = 4
 A = "Duck"
 #A will not overwrite a
 
+#%% assigning a variable to another variable
+
+x = 5
+print(f'{x=}, address: {id(x)}')
+y = x 
+print(f'{y=}, address: {id(y)}')
+x = 6
+print(f'{x=}, address: {id(x)}')
+print(f'{y=}, address: {id(y)}')
+
 #%% Assign Multiple values
 # Python allows you to assign values to multiple variables in one line:
 
