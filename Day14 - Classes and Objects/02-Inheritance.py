@@ -143,16 +143,6 @@ https://www.programiz.com/python-programming/class
 
 
 
-
-
-
-
-
-
-
-
-
-
 '''
 
 Python Inheritance

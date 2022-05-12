@@ -12,6 +12,7 @@ myset = {"apple", "banana", "cherry"}
 #%% Create a set
 myset = {"apple", "banana", "cherry"}
 print(myset)
+
 # %% Duplicates Not Allowed and will be ignored
 thisset = {"apple", "banana", "cherry", "apple"}
 print(thisset)
@@ -95,17 +96,15 @@ print(thisset)
 
 # %% The clear() method empties the set:
 thisset = {"apple", "banana", "cherry"}
-
 thisset.clear()
-
 print(thisset)
+
 # %% The del keyword will delete the set completely:
 
 thisset = {"apple", "banana", "cherry"}
-
 del thisset
-
 print(thisset)
+
 # %% There are several ways to join two or more sets in Python
 # The union() method returns a new set with all items from both sets:
 

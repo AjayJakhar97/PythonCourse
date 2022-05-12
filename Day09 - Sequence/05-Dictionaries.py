@@ -21,6 +21,8 @@ print(thisdict["brand"])
 
 # %% Get() method
 print(thisdict.get("brand"))
+print(thisdict.get("brand","Wrong key passed"))
+print(thisdict.get("Sunil","Wrong key passed"))
 
 # %% Dictionaries cannot have two items with the same key
 thisdict = {
@@ -39,7 +41,12 @@ thisdict = {
     "brand": "Ford",
     "electric": False,
     "year": 1964,
-    "colors": ["red", "white", "blue"]
+    "colors": ["red", "white", "blue"],
+    "thisdict": {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
 }
 print(thisdict)
 
@@ -49,7 +56,6 @@ print(type(thisdict))
 
 # %% change the value of a key
 thisdict["year"] = 2022
-
 print(thisdict)
 
 # %% The keys() method will return a list of all the keys in the dictionary.
