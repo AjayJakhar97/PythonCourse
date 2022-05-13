@@ -230,6 +230,15 @@ WiFi = {
     'SuperMan': 'Locked'
 }
 
+# For this activity you need knowdege of below
+# 1- Syntax for List comprehesion with filter
+# nameOfTheList = [expression for item in iterable if condition == True]
+# 
+# 2- any() function
+# 3- If and else control loop 
+# 4- Boolean datatype (True and False)
+# 5- How to get values from a dictionary
+
 if any([True for item in WiFi.values() if item == 'Open']):
     print("Found an open WiFi")
 else:

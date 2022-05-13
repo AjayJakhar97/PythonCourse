@@ -249,13 +249,14 @@ myfamily = {
 }
 
 print(myfamily)
+print(myfamily["child1"]["year"])
+
 # %% Task01 - How to remove duplicate items from a list using dictionary?
 
 
 def removeDuplicateItems(myList):
     myList = list(dict.fromkeys(myList))
     return myList
-
 
 myList01 = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 2, 1]
 print(removeDuplicateItems(myList01))
