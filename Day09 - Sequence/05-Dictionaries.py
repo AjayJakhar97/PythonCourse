@@ -22,7 +22,7 @@ print(thisdict["brand"])
 # %% Get() method
 print(thisdict.get("brand"))
 print(thisdict.get("brand","Wrong key passed"))
-print(thisdict.get("Sunil","Wrong key passed"))
+print(thisdict.get("name","Wrong key passed"))
 
 # %% Dictionaries cannot have two items with the same key
 thisdict = {
@@ -59,7 +59,6 @@ thisdict["year"] = 2022
 print(thisdict)
 
 # %% The keys() method will return a list of all the keys in the dictionary.
-
 thisdict.keys()
 # %%
 thisdict.values()
@@ -68,7 +67,7 @@ thisdict.items()
 # %% Check if Key Exists
 if "year" in thisdict.keys():
     print(thisdict["year"])
-# %% Check if value Exists
+# %% Check if "2022" value Exists
 if 2022 in thisdict.values():
     print("yes, it exists")
 else:
@@ -85,6 +84,7 @@ thisdict = {
 }
 
 thisdict.update({"year": 2020})
+thisdict.update({"name": "Sunil"})
 
 print(thisdict)
 
@@ -137,8 +137,10 @@ thisdict = {
     "year": 1964
 }
 
-for x in thisdict:
-    print(x)
+# for item in thisdict:
+# for item in thisdict.keys():
+for item in thisdict.values():
+    print(item)
 
 # %% Print all values in the dictionary, one by one:
 
@@ -177,8 +179,8 @@ dict2 = dict1
 
 dict1.update({"year": 2022})
 
-print(dict2)
 print(dict1)
+print(dict2)
 
 # %% Make a copy of a dictionary with the copy() method:
 dict1 = {
@@ -271,6 +273,19 @@ dictB = {"name": "John", "class": "medium"}
 dictC = dictA | dictB
 print(dictC)
 
+#%% What's wrong here with Keys?
+
+dictA={
+    "age" : 13,
+    "height" : "5.2ft"
+}
+dictB={
+    "age" : 18,
+    "height" : "6.0ft"
+}
+dictC = dictA | dictB
+print(dictC)
+
 # %% Task: How to get unique ordered list?
 
 list1 = ["Hey", "How", "are", "Hey", "you", "?", "?"]
@@ -294,6 +309,29 @@ info = {'personal_data':
          }
       }
 
-color = info['personal_data']['physical_features']['color']
+# color = # you logic goes here...
+color = info['personal_data']['physical_features']['color']['hair']
 print(color)
 
+#%% MyFamily dictionary 
+
+child1 = {
+    "name": "Emil",
+    "year": 2004
+}
+child2 = {
+    "name": "Tobias",
+    "year": 2007
+}
+child3 = {
+    "name": "Linus",
+    "year": 2011
+}
+
+myfamily = {
+    "child1": child1,
+    "child2": child2,
+    "child3": child3
+}
+
+print(myfamily["child1"]["year"])

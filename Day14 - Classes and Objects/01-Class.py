@@ -135,16 +135,16 @@ class Person:
     self.name = name
     self.age = age
 
-  def myfunc(self):
+  def Greetings(self):
     print("Hello my name is " + self.name)
 
 p1 = Person("John", 36)
-p1.myfunc()
+p1.Greetings()
 
 #%% delete an attribute from object
 del p1.age
-
 print(p1.age)
+
 # %% Delete Objects
 del p1
 print(p1)

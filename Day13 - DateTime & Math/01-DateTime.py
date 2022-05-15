@@ -6,6 +6,9 @@ x = datetime.datetime.now()
 print(x)
 # The date contains year, month, day, hour, minute, second, and microsecond
 # The datetime module has many methods to return information about the date object
+# %% Let's create a date using datetime constructor. The year, month and day arguments are required. The datetime() class also takes parameters for time and timezone (hour, minute, second, microsecond, tzone), but they are optional, and has a default value of 0, (None for timezone)
+x = datetime.datetime(2020, 5, 17)
+print(x)
 #%% Return the year and 
 print(x)
 print(x.year)
@@ -16,10 +19,6 @@ print(x.weekday())
 
 # %% name of weekday
 x.strftime("%A")
-
-# %% Let's create a date using datetime constructor. The year, month and day arguments are required. The datetime() class also takes parameters for time and timezone (hour, minute, second, microsecond, tzone), but they are optional, and has a default value of 0, (None for timezone)
-x = datetime.datetime(2020, 5, 17)
-print(x)
 
 # %% datetime.combine method to Construct a datetime from a given date and a given time.
 from datetime import datetime,date,time,timezone
@@ -68,13 +67,12 @@ print(f'ISO 8601 weekday (1-7) : {x.strftime("%u")}')
 print(f'ISO 8601 weeknumber (01-53) : {x.strftime("%V")}')
 
 #%% Write a function to calculate the difference between two dates in days.
-
+import datetime
 def diffDate(start,end): 
-    '''
-    This function returns the difference between two dates in days
-    '''
     start = datetime.datetime.strptime(start,"%d/%m/%Y")
+    print(start)
     end = datetime.datetime.strptime(end,"%d/%m/%Y")
+    print(end)
     return (end-start).days
 
 diffDate("01/01/2019","01/01/2020")
