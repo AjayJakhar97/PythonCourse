@@ -70,6 +70,7 @@ class Parrot:
     species = "bird"
 
     # instance attribute
+    # __init__ is pronounced dunder init. Dunder (Double UNDERscore) Alias. More info @ https://wiki.python.org/moin/DunderAlias
     def __init__(self, name, age):
         self.name = name
         self.age = age
