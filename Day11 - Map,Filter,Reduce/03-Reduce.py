@@ -29,7 +29,11 @@ The result, as you'll expect is 68.
 
 So, what happened?
 
-As usual, it's all about iterations: reduce takes the first and second elements in numbers and passes them to custom_sum respectively. custom_sum computes their sum and returns it to reduce. reduce then takes that result and applies it as the first element to custom_sum and takes the next element (third) in numbers as the second element to custom_sum. It does this continuously (cumulatively) until numbers is exhausted.
+As usual, it's all about iterations: 
+1- reduce takes the first and second elements in numbers and passes them to custom_sum respectively. 
+2- custom_sum computes their sum and returns it to reduce. 
+3- reduce then takes that result and applies it as the first element to custom_sum and takes the next element (third) in numbers as the second element to custom_sum. 
+4- It does this continuously (cumulatively) until numbers is exhausted.
 '''
 #%% Let's see what happens when I use the optional initial value.
 
