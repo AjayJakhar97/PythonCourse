@@ -28,6 +28,28 @@ set2 = {1, 5, 7, 9, 3}
 set3 = {True, False, False}
 set4 = {"abc", 34, True, 40, "male"}
 
+#%%
+#%% Be careful when using bool with int 0 and 1 or decimal 1.0
+
+var1 = {1,'Python', ('abc','xyz'),False}
+print(var1)
+
+var2 = {0,'Python', ('abc','xyz'),True}
+print(var2)
+
+var3 = {1,'Python', ('abc','xyz'),True}
+# var3 = {1.0,'Python', ('abc','xyz'),True}
+print(var3) # Where is True
+
+var4 = {0,'Python', ('abc','xyz'),False}
+print(var4) # Where is False
+
+var5 = {2,'Python', ('abc','xyz'),True}
+print(var5)
+
+var6 = {1,'Python', ('abc','xyz'),str(True)}
+print(var6)
+
 # %% sets are defined as objects with the data type 'set'
 myset = {"apple", "banana", "cherry"}
 print(type(myset))

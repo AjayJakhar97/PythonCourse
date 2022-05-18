@@ -167,6 +167,10 @@ for x in thisdict.items():
 for x, y in thisdict.items():
     print(x, y)
 
+#%%
+for x, y in thisdict.items():
+    print(x,' = ', y)
+
 # %% Create a new reference dictionary
 
 dict1 = {
@@ -175,12 +179,17 @@ dict1 = {
     "year": 1964
 }
 
+print(id(dict1))
+
 dict2 = dict1
+print(id(dict1))
 
 dict1.update({"year": 2022})
 
 print(dict1)
+print(id(dict1))
 print(dict2)
+print(id(dict2))
 
 # %% Make a copy of a dictionary with the copy() method:
 dict1 = {
@@ -209,6 +218,38 @@ print(dict1)
 print(dict2)
 
 # %% Nested Dictionaries
+
+# 1st method - Create dictionaries first
+
+child1 = {
+    "name": "Emil",
+    "year": 2004
+}
+
+child2 = {
+    "name": "Tobias",
+    "year": 2007
+}
+
+child3 = {
+    "name": "Linus",
+    "year": 2011
+}
+
+# Now create a new dictionary and add dictionaries there
+
+myfamily = {
+    "kid1": child1,
+    "kid2": child2,
+    "kid3": child3
+}
+
+print(myfamily)
+
+print(myfamily["kid1"]["year"])
+
+#%% 2nd method - Create dictionaries as values of your master dictionary
+
 myfamily = {
     "child1": {
         "name": "Emil",
@@ -222,32 +263,6 @@ myfamily = {
         "name": "Linus",
         "year": 2011
     }
-}
-
-print(myfamily)
-
-# %% another method
-# Create dictionaries first
-
-child1 = {
-    "name": "Emil",
-    "year": 2004
-}
-child2 = {
-    "name": "Tobias",
-    "year": 2007
-}
-child3 = {
-    "name": "Linus",
-    "year": 2011
-}
-
-# Now create a new dictionary and add dictionaries there
-
-myfamily = {
-    "child1": child1,
-    "child2": child2,
-    "child3": child3
 }
 
 print(myfamily)
@@ -313,25 +328,169 @@ info = {'personal_data':
 color = info['personal_data']['physical_features']['color']['hair']
 print(color)
 
-#%% MyFamily dictionary 
+#%% 
 
-child1 = {
-    "name": "Emil",
-    "year": 2004
-}
-child2 = {
-    "name": "Tobias",
-    "year": 2007
-}
-child3 = {
-    "name": "Linus",
-    "year": 2011
+D = dict() 
+
+D[0] = 1
+D[1] = 0 
+
+print(D)
+
+#%% 
+x = [0,1]
+
+D = dict() 
+
+D[x[0]] = x[1]
+D[x[1]+7] = x[0] 
+
+print(D)
+
+#%%
+D = dict() 
+for x in range(2): 
+    print(D) 
+
+#%%
+D = dict() 
+for x in enumerate(range(2)): 
+    D[x[0]] = x[1] 
+    D[x[1]+7] = x[0] 
+print(D) 
+
+#%% Assessment 
+
+# 1. Select the correct ways to get the value of marks key.
+
+student = {
+  "name": "Emma",
+  "class": 9,
+  "marks": 75
 }
 
-myfamily = {
-    "child1": child1,
-    "child2": child2,
-    "child3": child3
+m = student.get(2)
+m = student.get('marks')
+m = student[2]
+m = student['marks']
+
+# 2. In Python, Dictionaries are immutable
+
+False
+True
+
+# 3. Select the correct way to access the value of a history subject
+
+sampleDict = { 
+   "class":{ 
+      "student":{ 
+         "name":"Mike",
+         "marks":{ 
+            "physics":70,
+            "history":80
+         }
+      }
+   }
 }
 
-print(myfamily["child1"]["year"])
+sampleDict['class']['student']['marks']['history']
+sampleDict['class']['student']['marks'][1]
+sampleDict['class'][0]['marks']['history']
+
+# 4. What is the output of the following dictionary operation
+
+dict1 = {"name": "Mike", "salary": 8000}
+temp = dict1.get("age")
+print(temp)
+KeyError: ‘age’
+None
+
+# 5. Dictionary keys must be immutable
+
+True
+False
+
+# 6. Items are accessed by their position in a dictionary and All the keys in a dictionary must be of the same type.
+
+True
+False
+
+# 7. Select the all correct way to remove the key marks from a dictionary
+
+student = { 
+  "name": "Emma", 
+  "class": 9, 
+  "marks": 75 
+}
+
+student.pop("marks")
+del student["marks"]
+student.remove("marks")
+student.popitem("marks")
+
+# 8. Select all correct ways to copy a dictionary in Python
+
+dict2 = dict1.copy()
+dict2 = dict(dict1)
+dict2 = dict1
+
+# 9. What is the output of the following code
+
+dict1 = {"key1":1, "key2":2}
+dict2 = {"key2":2, "key1":1}
+print(dict1 == dict2)
+
+True
+False
+
+# 10. Select correct ways to create an empty dictionary
+
+sampleDict = {}
+sampleDict = dict()
+sampleDict = dict{}
+
+# 11. What is the output of the following dictionary operation
+
+dict1 = {"name": "Mike", "salary": 8000}
+temp = dict1.pop("age")
+print(temp)
+
+KeyError: ‘age’
+None
+
+# 12. Select the correct way to print Emma’s age.
+
+student = {1: {'name': 'Emma', 'age': '27', 'sex': 'Female'},
+           2: {'name': 'Mike', 'age': '22', 'sex': 'Male'}}
+student[0][1]
+student[1]["age"]
+student[0]["age"]
+
+# 13. Please select all correct ways to empty the following dictionary
+
+student = { 
+  "name": "Emma", 
+  "class": 9, 
+  "marks": 75 
+}
+
+del student
+del student[0:2]
+student.clear()
+
+# 14. What is the output of the following
+
+sampleDict = dict([
+    ('first', 1),
+    ('second', 2),
+    ('third', 3)
+])
+print(sampleDict)
+'''
+[ (‘first’, 100), (‘second’, 200), (‘third’, 300) ]
+
+Options: SyntaxError: invalid syntax
+
+{‘first’: 1, ‘second’: 2, ‘third’: 3}
+
+'''
