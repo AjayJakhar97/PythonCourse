@@ -191,12 +191,23 @@ print("-------")
 for L in nested1:
     print(L)
 
-#%%
-
+#%% let's access the items
 nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
 y = nested1[1]
 print(y)
 print(y[0])
+
+#%% You can access index in any of the below ways
+
+# store in a variable first
+myList = ['apple','baana','cherry',['a','b']]
+print(myList[3][1])
+
+# access index directly
+print(['apple','baana','cherry',['a','b']][3][1])
+
+#%% another example
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
 
 print([10, 20, 30][1])
 print(nested1[1][0])

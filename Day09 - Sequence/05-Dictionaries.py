@@ -21,8 +21,23 @@ print(thisdict["brand"])
 
 # %% Get() method
 print(thisdict.get("brand"))
-print(thisdict.get("brand","Wrong key passed"))
-print(thisdict.get("name","Wrong key passed"))
+print(thisdict.get("brand", "Wrong key passed"))
+print(thisdict.get("name", "Wrong key passed"))
+
+# %% Items are NOT accessed by their position in a dictionary and keys in a dictionary may or may not be of same type.
+
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    2: 1964,
+    True: 'hey'
+}
+print(thisdict)
+# print(thisdict[0]) # Items are NOT accessed by their position in a dictionary 
+
+print(thisdict["brand"])
+print(thisdict[2])
+print(thisdict[True])
 
 # %% Dictionaries cannot have two items with the same key
 thisdict = {
@@ -167,9 +182,22 @@ for x in thisdict.items():
 for x, y in thisdict.items():
     print(x, y)
 
-#%%
+# %%
 for x, y in thisdict.items():
-    print(x,' = ', y)
+    print(x, ' = ', y)
+
+# %% You can compare elements of dictionary with == and check if it the reference is same with 'is' keyword
+
+dict1 = {"key1": 1, "key2": 2}
+dict2 = {"key1": 1, "key2": 2}
+
+print(dict1 == dict2)
+print(dict1 is dict2)
+
+dict3 = {"key2": 2, "key1": 1}
+
+print(dict1 == dict3)
+print(dict1 is dict3)
 
 # %% Create a new reference dictionary
 
@@ -191,6 +219,10 @@ print(id(dict1))
 print(dict2)
 print(id(dict2))
 
+#  You can compare elements of dictionary with ==
+print(dict1 == dict2)
+print(dict1 is dict2)
+
 # %% Make a copy of a dictionary with the copy() method:
 dict1 = {
     "brand": "Ford",
@@ -204,6 +236,11 @@ dict1.update({"year": 2022})
 
 print(dict1)
 print(dict2)
+
+# You can compare elements of dictionary with ==
+print(dict1 == dict2)
+print(dict1 is dict2)
+
 # %% Make a copy of a dictionary with the dict() function
 dict1 = {
     "brand": "Ford",
@@ -216,6 +253,10 @@ dict1.update({"year": 2022})
 
 print(dict1)
 print(dict2)
+
+# You can compare elements of dictionary with ==
+print(dict1 == dict2)
+print(dict1 is dict2)
 
 # %% Nested Dictionaries
 
@@ -248,7 +289,7 @@ print(myfamily)
 
 print(myfamily["kid1"]["year"])
 
-#%% 2nd method - Create dictionaries as values of your master dictionary
+# %% 2nd method - Create dictionaries as values of your master dictionary
 
 myfamily = {
     "child1": {
@@ -275,6 +316,7 @@ def removeDuplicateItems(myList):
     myList = list(dict.fromkeys(myList))
     return myList
 
+
 myList01 = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 2, 1]
 print(removeDuplicateItems(myList01))
 
@@ -288,15 +330,15 @@ dictB = {"name": "John", "class": "medium"}
 dictC = dictA | dictB
 print(dictC)
 
-#%% What's wrong here with Keys?
+# %% What's wrong here with Keys?
 
-dictA={
-    "age" : 13,
-    "height" : "5.2ft"
+dictA = {
+    "age": 13,
+    "height": "5.2ft"
 }
-dictB={
-    "age" : 18,
-    "height" : "6.0ft"
+dictB = {
+    "age": 18,
+    "height": "6.0ft"
 }
 dictC = dictA | dictB
 print(dictC)
@@ -310,63 +352,89 @@ print(list2)
 # %% Task : Extract the value associated with the key 'color' and assign it to the variable 'color'. Do not hard code this
 
 info = {'personal_data':
-         {'name': 'Lauren',
-          'age': 20,
-          'major': 'Information Science',
-          'physical_features':
-             {'color': {'eye': 'blue',
-                        'hair': 'brown'},
-              'height': "5'8"}
+        {'name': 'Lauren',
+         'age': 20,
+         'major': 'Information Science',
+         'physical_features':
+         {'color': {'eye': 'blue',
+                    'hair': 'brown'},
+          'height': "5'8"}
          },
-       'other':
-         {'favorite_colors': ['purple', 'green', 'blue'],
-          'interested_in': ['social media', 'intellectual property', 'copyright', 'music', 'books']
+        'other':
+        {'favorite_colors': ['purple', 'green', 'blue'],
+         'interested_in': ['social media', 'intellectual property', 'copyright', 'music', 'books']
          }
-      }
+        }
 
 # color = # you logic goes here...
 color = info['personal_data']['physical_features']['color']['hair']
 print(color)
 
-#%% 
+# %%
 
-D = dict() 
+D = dict()
 
 D[0] = 1
-D[1] = 0 
+D[1] = 0
 
 print(D)
 
-#%% 
-x = [0,1]
+# %%
+x = [0, 1]
 
-D = dict() 
+D = dict()
 
 D[x[0]] = x[1]
-D[x[1]+7] = x[0] 
+D[x[1]+7] = x[0]
 
 print(D)
 
-#%%
-D = dict() 
-for x in range(2): 
-    print(D) 
+# %%
+D = dict()
+for x in range(2):
+    print(D)
 
-#%%
-D = dict() 
-for x in enumerate(range(2)): 
-    D[x[0]] = x[1] 
-    D[x[1]+7] = x[0] 
-print(D) 
+# %%
+D = dict()
+for x in enumerate(range(2)):
+    D[x[0]] = x[1]
+    D[x[1]+7] = x[0]
+print(D)
 
-#%% Assessment 
+# %%
+myKeyList = ['a', 'b', 'c', 'd', 'e']
+myValueList = 1
 
-# 1. Select the correct ways to get the value of marks key.
+myDictionary = dict.fromkeys(myKeyList, myValueList)
+print(myDictionary)
+
+# %% if you change values in the list used for keys, it still doesn't change keys in dictionary
+
+myKeyList.append('f')
+print(myDictionary)
+
+# %% but if you are changing values in the list you took values from, it changes
+
+# myKeyList = {'a','b','c','d','e'}
+myKeyList = ['a', 'b', 'c', 'd', 'e']
+myValueList = [1]
+
+myDictionary = dict.fromkeys(myKeyList, myValueList)
+print(myDictionary)
+
+myKeyList.append('f')  # nothing changes
+myValueList.append(2)  # changes the value of key
+
+print(myDictionary)
+
+# %% Assessment
+
+# %% 1. Select the correct ways to get the value of marks key.
 
 student = {
-  "name": "Emma",
-  "class": 9,
-  "marks": 75
+    "name": "Emma",
+    "class": 9,
+    "marks": 75
 }
 
 m = student.get(2)
@@ -374,111 +442,138 @@ m = student.get('marks')
 m = student[2]
 m = student['marks']
 
-# 2. In Python, Dictionaries are immutable
+# %% 2. In Python, Dictionaries are immutable
+# False
+# True
 
-False
-True
+student['name'] = 'hello'
+student['hey'] = 'hello'
 
-# 3. Select the correct way to access the value of a history subject
+print(student)
 
-sampleDict = { 
-   "class":{ 
-      "student":{ 
-         "name":"Mike",
-         "marks":{ 
-            "physics":70,
-            "history":80
-         }
-      }
-   }
+# %% 3. Select the correct way to access the value of a "history" subject
+
+sampleDict = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
 }
 
 sampleDict['class']['student']['marks']['history']
 sampleDict['class']['student']['marks'][1]
 sampleDict['class'][0]['marks']['history']
 
-# 4. What is the output of the following dictionary operation
+# %% 4. What is the output of the following dictionary operation
 
 dict1 = {"name": "Mike", "salary": 8000}
 temp = dict1.get("age")
 print(temp)
-KeyError: ‘age’
-None
 
-# 5. Dictionary keys must be immutable
+# KeyError: ‘age’
+# None
+
+# %%  5. Dictionary keys must be immutable
+
+# True
+# False
+
+# Reference: https://stackoverflow.com/questions/24217647/why-must-dictionary-keys-be-immutable
+
+# %% 6. Items are accessed by their position in a dictionary and All the keys in a dictionary must be of the same type.
 
 True
 False
 
-# 6. Items are accessed by their position in a dictionary and All the keys in a dictionary must be of the same type.
+#%% 7. Select the all correct way to remove the key marks from a dictionary
 
-True
-False
-
-# 7. Select the all correct way to remove the key marks from a dictionary
-
-student = { 
-  "name": "Emma", 
-  "class": 9, 
-  "marks": 75 
+student = {
+    "name": "Emma",
+    "class": 9,
+    "marks": 75
 }
 
-student.pop("marks")
-del student["marks"]
+student.pop("marks") #
+del student["marks"] #
 student.remove("marks")
 student.popitem("marks")
 
-# 8. Select all correct ways to copy a dictionary in Python
+print(student)
+
+#%% 8. Select all correct ways to copy a dictionary in Python
 
 dict2 = dict1.copy()
 dict2 = dict(dict1)
 dict2 = dict1
 
-# 9. What is the output of the following code
+# %% 9. What is the output of the following code
 
-dict1 = {"key1":1, "key2":2}
-dict2 = {"key2":2, "key1":1}
+dict1 = {"key1": 1, "key2": 2}
+dict2 = {"key2": 2, "key1": 1}
 print(dict1 == dict2)
 
-True
-False
+# True #
+# False
 
-# 10. Select correct ways to create an empty dictionary
+# %% 10. Select correct ways to create an empty dictionary
 
 sampleDict = {}
 sampleDict = dict()
-sampleDict = dict{}
+# sampleDict = dict{}
 
-# 11. What is the output of the following dictionary operation
+# %% 11. What is the output of the following dictionary operation
 
 dict1 = {"name": "Mike", "salary": 8000}
 temp = dict1.pop("age")
 print(temp)
 
-KeyError: ‘age’
-None
+# KeyError: ‘age’ #
+# None
 
-# 12. Select the correct way to print Emma’s age.
+# The pop() method removes the item from the dictionary. A KeyError will be thrown if the key doesn’t exist.
 
-student = {1: {'name': 'Emma', 'age': '27', 'sex': 'Female'},
-           2: {'name': 'Mike', 'age': '22', 'sex': 'Male'}}
+# %% 12. Select the correct way to print Emma’s age.
+
+student = {
+    1: {
+        'name': 'Emma',
+                'age': '27',
+                'sex': 'Female'
+    },
+    2: {
+        'name': 'Mike',
+                'age': '22',
+                'sex': 'Male'}
+}
+
 student[0][1]
-student[1]["age"]
+student[1]["age"] #
 student[0]["age"]
 
-# 13. Please select all correct ways to empty the following dictionary
+# %% 13. Please select all correct ways to empty the following dictionary
 
-student = { 
-  "name": "Emma", 
-  "class": 9, 
-  "marks": 75 
+student = {
+    "name": "Emma",
+    "class": 9,
+    "marks": 75
 }
 
 del student
 del student[0:2]
-student.clear()
+student.clear() #
 
-# 14. What is the output of the following
+print(student)
+
+# %% 14. What is the output of the following
+
+# [ (‘first’, 100), (‘second’, 200), (‘third’, 300) ]
+# Options: SyntaxError: invalid syntax
+# {‘first’: 1, ‘second’: 2, ‘third’: 3}
 
 sampleDict = dict([
     ('first', 1),
@@ -486,11 +581,7 @@ sampleDict = dict([
     ('third', 3)
 ])
 print(sampleDict)
-'''
-[ (‘first’, 100), (‘second’, 200), (‘third’, 300) ]
 
-Options: SyntaxError: invalid syntax
-
-{‘first’: 1, ‘second’: 2, ‘third’: 3}
-
-'''
+#%% You can see them as tuples again using items() method
+for item in sampleDict.items():
+    print(item)
