@@ -900,3 +900,4 @@ print(sys.getsizeof(fruits), " bytes")
 list = [1 for i in [1,2,3]]
 print(3 in list)
 
+#%% Assessment : https://pynative.com/python-list-quiz/
