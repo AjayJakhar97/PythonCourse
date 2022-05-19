@@ -187,3 +187,14 @@ print(blu.dance())
 '''
 In the above program, we define two methods i.e sing() and dance(). These are called instance methods because they are called on an instance object i.e blu.
 '''
+
+#%% Knowledge Check: What will be the output of below?
+
+class Tester:
+    def __init__(self,id):
+        self.id = str(id)
+        id = "224"
+
+tester = Tester(12)
+print((tester.id) + 2)
+
